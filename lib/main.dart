@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/view/screens/intail/intail.dart';
 
 void main() {
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // darkTheme: ThemeData.dark(),
+      
       title: 'YT to Todo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

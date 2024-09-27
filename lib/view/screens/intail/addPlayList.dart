@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/logic/helper.dart';
 
 class AddPlaylistScreen extends StatefulWidget {
   const AddPlaylistScreen({super.key});
@@ -12,7 +15,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _linkController = TextEditingController();
 
-  void _submitForm() {
+  void _submitForm() async {
     if (_formKey.currentState!.validate()) {
       // Process data (e.g., save to database, send to API)
       String name = _nameController.text;
@@ -34,6 +37,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
     return youtubePlaylistRegex.hasMatch(link);
   }
 
+  String repo = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,12 +113,22 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 24),
+              Text("$repo"),
               const Spacer(
                 flex: 2,
               )
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          log("message");
+          await HelperFuncation().getAllVideosFormPlayListYT();
+        },
+        backgroundColor: Colors.blue,
+        child: const Icon(Icons.arrow_back),
       ),
     );
   }
