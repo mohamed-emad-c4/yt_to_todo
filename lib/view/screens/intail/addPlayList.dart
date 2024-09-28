@@ -2,9 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/logic/helper.dart';
-import 'package:yt_to_todo/model/playList.dart';
-
-String link = "";
 
 class AddPlaylistScreen extends StatefulWidget {
   const AddPlaylistScreen({super.key});
@@ -147,6 +144,15 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          log("message");
+          String repo = await HelperFuncation().getDurationVideo("0R_0Ma7yGPo");
+          log(repo);
+        },
+        backgroundColor: Colors.blue,
+        child: const Icon(Icons.arrow_back),
       ),
     );
   }
