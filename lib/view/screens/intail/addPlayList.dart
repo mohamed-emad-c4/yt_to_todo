@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import 'package:yt_to_todo/model/playList.dart';
 
 class AddPlaylistScreen extends StatefulWidget {
   const AddPlaylistScreen({super.key});
@@ -124,9 +125,15 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          log("message");
-          String repo = await HelperFuncation().getDurationVideo("0R_0Ma7yGPo");
-          log(repo);
+          log("clicked");
+          // String repo = await HelperFuncation().getDurationVideo("0R_0Ma7yGPo");
+          // log(repo);
+
+          List<VideoInfoModel> videoList = await HelperFunction()
+              .getAllVideosInPlaylist("PLoP3S2S1qTfCVIETOGwaK3lyaL3UKu403");
+          HelperFunction().sumTotalTime(videoList);
+
+     
         },
         backgroundColor: Colors.blue,
         child: const Icon(Icons.arrow_back),
