@@ -1,7 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/data/databases.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import 'package:yt_to_todo/model/playList.dart';
+
+String link = "";
 
 class AddPlaylistScreen extends StatefulWidget {
   const AddPlaylistScreen({super.key});
@@ -147,12 +151,23 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          log("message");
-          String repo = await HelperFuncation().getDurationVideo("0R_0Ma7yGPo");
-          log(repo);
+          log("Adding video to playlist...");
+          await DatabaseHelper().insertVideo({
+            'idvideo': '1',
+            'title': '1',
+            'image': 'https://example.com/image3.jpg',
+            'url': 'https://example.com/video3',
+            'description': 'New Video description',
+            'duration': 'PT20M45S',
+            'idplaylist': '1',
+            'status_video_id': 1,
+            'days': 5, // New field
+          });
+          List<Map<String, dynamic>> videos =
+              await DatabaseHelper().fetchVideosByPlaylist('1');
+          log("Videos in playlist: $videos");
         },
-        backgroundColor: Colors.blue,
-        child: const Icon(Icons.arrow_back),
+        child: const Icon(Icons.add),
       ),
     );
   }
