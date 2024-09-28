@@ -7,3 +7,5 @@ List<Widget> widgetIntial = [
   const FeaturesScreen(),
   const InitialSettingsScreen()
 ];
+String API_KEY = "AIzaSyCLTGazN_J6ULDtzvyBkfxccXp-73oMqQs";
+String ytAPI ="https://www.googleapis.com/youtube/v3/";

@@ -114,7 +114,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
                 ),
               ),
               const SizedBox(height: 24),
-              Text("$repo"),
+              Text(repo),
               const Spacer(
                 flex: 2,
               )
@@ -125,7 +125,8 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           log("message");
-          await HelperFuncation().getAllVideosFormPlayListYT();
+          String repo = await HelperFuncation().getDurationVideo("0R_0Ma7yGPo");
+          log(repo);
         },
         backgroundColor: Colors.blue,
         child: const Icon(Icons.arrow_back),
