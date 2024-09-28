@@ -2,6 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import 'package:yt_to_todo/model/playList.dart';
+
+String link = "";
 
 class AddPlaylistScreen extends StatefulWidget {
   const AddPlaylistScreen({super.key});
@@ -14,18 +17,38 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _linkController = TextEditingController();
+  bool _isLoading = false;
+  String _totalDuration = "";
 
   void _submitForm() async {
     if (_formKey.currentState!.validate()) {
-      // Process data (e.g., save to database, send to API)
-      String name = _nameController.text;
-      String link = _linkController.text;
-      print("Playlist Name: $name, Playlist Link: $link");
+      setState(() {
+        _isLoading = true;
+      });
 
-      // Show a success message or navigate to another screen
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Playlist added successfully!')),
-      );
+      try {
+        String name = _nameController.text;
+        link = _linkController.text;
+        log("Playlist Name: $name, Playlist Link: $link");
+
+        List<VideoInfoModel> videoList = await HelperFunction()
+            .getAllVideosInPlaylist(link.split("playlist?list=")[1]);
+        _totalDuration = HelperFunction().sumTotalTime(videoList);
+
+        // Show a success message or navigate to another screen
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Playlist added successfully!')),
+        );
+      } catch (e) {
+        log("Error fetching playlist: $e");
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error fetching playlist: $e')),
+        );
+      } finally {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -37,7 +60,6 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
     return youtubePlaylistRegex.hasMatch(link);
   }
 
-  String repo = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,9 +76,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(
-                flex: 1,
-              ),
+              const Spacer(flex: 1),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _nameController,
@@ -98,38 +118,35 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                onPressed: _submitForm,
+                onPressed: _isLoading ? null : _submitForm,
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                child: const Text(
-                  "Add Playlist",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                child: _isLoading
+                    ? const CircularProgressIndicator()
+                    : const Text(
+                        "Add Playlist",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
               ),
               const SizedBox(height: 24),
-              Text(repo),
-              const Spacer(
-                flex: 2,
-              )
+              Text(
+                _totalDuration,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Spacer(flex: 2),
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          log("message");
-          String repo = await HelperFuncation().getDurationVideo("0R_0Ma7yGPo");
-          log(repo);
-        },
-        backgroundColor: Colors.blue,
-        child: const Icon(Icons.arrow_back),
       ),
     );
   }
