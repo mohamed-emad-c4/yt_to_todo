@@ -151,21 +151,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          log("Adding video to playlist...");
-          await DatabaseHelper().insertVideo({
-            'idvideo': '1',
-            'title': '1',
-            'image': 'https://example.com/image3.jpg',
-            'url': 'https://example.com/video3',
-            'description': 'New Video description',
-            'duration': 'PT20M45S',
-            'idplaylist': '1',
-            'status_video_id': 1,
-            'days': 5, // New field
-          });
-          List<Map<String, dynamic>> videos =
-              await DatabaseHelper().fetchVideosByPlaylist('1');
-          log("Videos in playlist: $videos");
+         
         },
         child: const Icon(Icons.add),
       ),
