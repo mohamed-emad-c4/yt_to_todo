@@ -1,0 +1,382 @@
+{
+    "roadmap": [
+        {
+            "day": 1,
+            "videos": [
+                {
+                    "title": "تعلم HTML من الصفر: كورس تعلم تطوير وتصميم المواقع وبرمجة صفحات الويب بالعربي",
+                    "duration": "5:52",
+                    "description": "Course overview and introduction to HTML basics."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: تهيئة بيئة العمل وأدوات تساعدنا على كتابة الكود",
+                    "duration": "7:25",
+                    "description": "Setting up a development environment and using essential code editor tools."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: الهيكل الاساسي لصفحات الويب",
+                    "duration": "7:12",
+                    "description": "Understanding HTML tags, elements, and the basic structure of an HTML document."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: استخدام الادوات في تطوير صفحات الويب",
+                    "duration": "6:50",
+                    "description": "Learning how to utilize various tools for HTML development, including code editors and browsers."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: ما هو الـ Head tag وأهمية الـ Meta data",
+                    "duration": "4:10",
+                    "description": "Explaining the head tag and its importance in defining meta data, like page titles and descriptions."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: ما هو الـ Open Graph Protocol",
+                    "duration": "5:09",
+                    "description": "Introduction to the Open Graph Protocol and its use for social media sharing and meta data optimization."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: ماذا نتعلم في الوحدة الجديدة",
+                    "duration": "2:30",
+                    "description": "Preview of the next module, which focuses on page content and layout."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: الـ heading وبداية مشروع الـ portfolio",
+                    "duration": "5:40",
+                    "description": "Introducing heading tags (h1-h6) and beginning a portfolio project using HTML."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: كتابة فقرة نصية باستخدام HTML",
+                    "duration": "10:01",
+                    "description": "Creating paragraph text using the paragraph tag (p) and formatting options."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: تنسيق النصوص باستخدام الـ HTML",
+                    "duration": "10:10",
+                    "description": "Learning to format text using HTML tags, including bold, italic, and underline styles."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: حل تكليف تنسيق الـ Portfolio",
+                    "duration": "10:39",
+                    "description": "Completing the portfolio project by applying learned text formatting skills."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: استخدام الاقتباسات والمصطلحات في HTML",
+                    "duration": "9:18",
+                    "description": "Utilizing quotation tags (q) and blockquote tags to incorporate citations and long quotes into HTML."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: كتابة code برمجي داخل صفحة الـ HTML",
+                    "duration": "11:41",
+                    "description": "Embedding code snippets directly into HTML using the `<code>` tag for highlighting and visual formatting."
+                }
+            ],
+            "total_duration": "1:57:54"
+        },
+        {
+            "day": 2,
+            "videos": [
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: استخدام عنصر الـ a لإنشاء الروابط",
+                    "duration": "12:26",
+                    "description": "Exploring the anchor tag (<a>) for creating links to other web pages or specific parts of the same page."
+                },
+                {
+                    "title": "علم HTML من الصفر للإحتراف: روابط وسائل التواصل في مشروع الـ Portfolio",
+                    "duration": "7:57",
+                    "description": "Integrating links to social media profiles into the portfolio project using the `<a>` tag and appropriate URLs."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: ماذا سنتعلم في الواحده الثالثة",
+                    "duration": "1:47",
+                    "description": "Overview of the third module, which will cover lists, images, and multimedia elements."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: أستخدام القوائم \"Lists\"",
+                    "duration": "6:15",
+                    "description": "Learn about creating unordered lists, ordered lists, and definition lists using HTML."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: كيفية استخدام الصور في HTML",
+                    "duration": "17:50",
+                    "description": "Adding images to HTML using the `<img>` tag and understanding how to control image size, position, and alternative text."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: انواع الصور في HTML",
+                    "duration": "13:11",
+                    "description": "Exploring different types of images supported by HTML and how to optimize images for different browsers and devices."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: ما هي الأيقونة المفضلة Favicon",
+                    "duration": "3:22",
+                    "description": "Understanding Favicons and their importance in representing a website, and learning to incorporate favicons into the `<head>` section of an HTML page."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: اضافة فيديو في صفحة الويب باستخدام HTML",
+                    "duration": "6:51",
+                    "description": "Learning to embed videos in HTML pages using the `<iframe>` tag and exploring different methods for video embedding, including using Youtube and Vimeo."
+                },
+                {
+                    "title": ": تعلم HTML من الصفر للاحتراف: استخدام الـ Source Tag لإضافة فيديو في",
+                    "duration": "5:19",
+                    "description": "Deepening understanding of the `source` tag and how it works to dynamically adapt video embedding depending on the user's browser or device."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: إضافة ملف صوتي في صفحة الويب باستخدام HTML",
+                    "duration": "4:21",
+                    "description": "Adding audio to an HTML page using the `<audio>` tag, including how to add audio controls and control playback."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: أستخدام iframe tag في الـ HTML",
+                    "duration": "8:17",
+                    "description": "Mastering the `<iframe>` tag for embedding content from external websites or platforms, ensuring it functions smoothly within the context of your page."
+                },
+                {
+                    "title": ": تعلم HTML من الصفر للإحتراف: تنظيم ملفات المشروع وتكليف الوحدة",
+                    "duration": "5:07",
+                    "description": "Organizing project files effectively and completing a module assignment to solidify acquired skills."
+                }
+            ],
+            "total_duration": "1:49:53"
+        },
+        {
+            "day": 3,
+            "videos": [
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: مشروع بناء صفحة الهبوط - Landing page",
+                    "duration": "14:20",
+                    "description": "Initiating the creation of a landing page project using HTML. This will cover planning and building the basic layout and key elements."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: تكملة مشروع بناء صفحة الهبوط - Landing page",
+                    "duration": "8:24",
+                    "description": "Continuing work on the landing page project, adding more details to the structure and implementing essential page sections."
+                },
+                {
+                    "title": ": تعلم HTML من الصفر للإحتراف: تكملة مشروع بناء صفحة الهبوط -2- Landing page",
+                    "duration": "11:18",
+                    "description": "Further development of the landing page, refining elements and including call-to-actions (CTAs) that will enhance user engagement."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف آخر خطوة بمشروع بناء صفحة الهبوط - Landing page",
+                    "duration": "9:37",
+                    "description": "Finalizing the landing page project by adding the finishing touches, incorporating final design adjustments and any remaining functionality."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: هنتعلم إيه في وحدة الـ Form في HTML5؟",
+                    "duration": "1:36",
+                    "description": "Introduction to the new module that will focus on forms using HTML5."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: مقدمة عن حقول إدخال النص - input element",
+                    "duration": "5:54",
+                    "description": "Introduction to form inputs in HTML5 and exploring different ways to implement basic text fields using the `input` tag."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: حقول إدخال النصوص في HTML",
+                    "duration": "8:10",
+                    "description": "Building on form creation knowledge, focusing specifically on input types and attributes associated with text field inputs."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: استخدام أنواع حقول إدخال مختلفة",
+                    "duration": "5:45",
+                    "description": "Learning about different input types for HTML forms beyond simple text fields, covering radio buttons, checkboxes, dropdown lists, etc."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: كيفية إرسال البيانات لقاعدة البيانات",
+                    "duration": "5:05",
+                    "description": "Exploring the fundamental concept of form data submission. This includes sending data to a server for processing and potential database storage."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: التأكد من صحة البيانات",
+                    "duration": "9:04",
+                    "description": "Learning how to implement client-side form validation using HTML5, improving data integrity and ensuring data quality before submission."
+                }
+            ],
+            "total_duration": "1:57:46"
+        },
+        {
+            "day": 4,
+            "videos": [
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: بناء form لإرسال وسائل التواصل",
+                    "duration": "7:02",
+                    "description": "Building a specialized HTML form that captures and submits social media information like names, emails, or profile links."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: إرسال حقول الإدخال والتعرف علي name, action",
+                    "duration": "8:58",
+                    "description": "Understanding how form data is sent, including the use of attributes such as 'name' to identify different input fields and the 'action' attribute for directing the form submission to the correct URL or script."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: أنواع حقول إدخال مختلفة",
+                    "duration": "6:34",
+                    "description": "Diving into diverse form field types available in HTML, expanding your skillset for creating specialized forms."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: إنشاء نموذج للتقدم إلى وظيفة",
+                    "duration": "8:14",
+                    "description": "Creating a fully functional job application form, demonstrating proficiency in integrating different form elements into a useful application."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: تكملة انشاء ال Application form",
+                    "duration": "11:44",
+                    "description": "Continuing work on the job application form project, fine-tuning it to create a visually appealing and user-friendly form that gathers required information effectively."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: Textarea in Form element",
+                    "duration": "9:06",
+                    "description": "Exploring the textarea element in HTML forms. Textarea allows users to enter multi-line text, offering a flexible and versatile approach for capturing large amounts of information."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: إنشاء نموذج ملف شخصي بالعربي والإنجليزي",
+                    "duration": "6:50",
+                    "description": "Using HTML skills to build a personal profile form that supports both Arabic and English languages."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: عناصر radio و checkbox",
+                    "duration": "8:05",
+                    "description": "Learning about and implementing radio buttons and checkboxes in HTML forms, ensuring the user interface offers efficient selection options."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للاحتراف: استخدام select element",
+                    "duration": "4:50",
+                    "description": "Learning about and applying the select element for creating dropdown lists within forms, allowing users to choose from predefined options."
+                }
+            ],
+            "total_duration": "1:41:28"
+        },
+        {
+            "day": 5,
+            "videos": [
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: حل تحدي إنشاء منيو لمطعم",
+                    "duration": "5:46",
+                    "description": "Building a complete HTML menu structure for a restaurant, encompassing multiple dishes and possibly categories or sections for presentation."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: تقسيم القائمة لمجموعات",
+                    "duration": "4:10",
+                    "description": "Developing HTML strategies for logically organizing menu items by grouping them into categories using headers or sub-headers."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: وحدة العناصر الدلالية Semantic Elements",
+                    "duration": "2:35",
+                    "description": "Transitioning to the module covering semantic elements, understanding their importance in conveying content meaning and structure to both browsers and search engines."
+                },
+                {
+                    "title": "ما هي العناصر الدلالية: تعلم HTML من الصفر للإحتراف",
+                    "duration": "3:20",
+                    "description": "Explaining the concept of semantic HTML, highlighting why it is important for accessibility, SEO, and future web development."
+                },
+                {
+                    "title": "إتقن الـ header حجر الأساس لتقديم موقعك على الإنترنت: تعلم HTML من الصفر للإحتراف",
+                    "duration": "3:14",
+                    "description": "Delving into the `<header>` tag, understanding its role and importance in organizing a web page's content for user experience."
+                },
+                {
+                    "title": "إنشاء موقع مقالات: تعلم HTML من الصفر للإحتراف",
+                    "duration": "3:07",
+                    "description": "Initiating the creation of a blog or article website using HTML. The video will cover setting up basic layout and structure for posts."
+                },
+                {
+                    "title": "قائمة التنقل Nav: تعلم HTML من الصفر للإحتراف",
+                    "duration": "3:37",
+                    "description": "Implementing navigation using the `<nav>` tag for blog websites.  Learning to create user-friendly navigation menus for improved site browsing."
+                },
+                {
+                    "title": "إنشاء المحتوى لموقع المقالات: تعلم HTML من الصفر للإحتراف",
+                    "duration": "4:32",
+                    "description": "Designing the content area for blog posts using semantic HTML. This will involve elements such as `<article>`, `<section>`, and other appropriate tags for organizing posts and associated information."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: إنشاء sidebar لموقع المقالات",
+                    "duration": "3:42",
+                    "description": "Adding a sidebar to a blog site using HTML to accommodate elements like featured content, recent posts, or social media widgets."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: إنشاء Footer لموقع المقالات",
+                    "duration": "3:25",
+                    "description": "Constructing the footer of a blog website using HTML. This includes implementing common features like copyright information, links, and possibly contact information."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للمبتدئين: تحدي بإنشاء صفحة لعرض المقال الواحد",
+                    "duration": "2:04",
+                    "description": "Developing a single-article page in HTML, a challenge designed to test the application of the skills acquired so far for a specific content type."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: تحليل ورسم هيكل صفحة عرض المقال",
+                    "duration": "7:45",
+                    "description": "Understanding how to structure a single-article page efficiently, covering content organization and HTML elements to present content clearly and in a logical fashion."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: كتابة كود صفحة عرض المقال (الجزء الأول)",
+                    "duration": "7:33",
+                    "description": "Starting to code a single-article page using HTML based on the planned structure."
+                },
+                {
+                    "title": "تعلم HTML من الصفر للإحتراف: تكملة كود صفحة عرض المقال وإنهاء مشروع الوحدة",
+                    "duration": "5:55",
+                    "description": "Finishing the coding of the single-article page and wrapping up the project, consolidating learned HTML skills for this content type."
+                }
+            ],
+            "total_duration": "1:44:25"
+        },
+        {
+            "day": 6,
+            "videos": [
+                {
+                    "title": "ماذا نتعلم في الوحدة الجديدة: استضافة المواقع: تعلم HTML من الصفر للإحتراف",
+                    "duration": "1:11",
+                    "description": "An overview of the upcoming module, focusing on web hosting, the next critical step in getting HTML websites live."
+                },
+                {
+                    "title": "مقدمة في استضافة المواقع على الويب: تعلم HTML من الصفر للإحتراف",
+                    "duration": "2:55",
+                    "description": "Introduction to web hosting concepts and terminology. This video will explore the core functionalities and roles of web hosting services."
+                },
+                {
+                    "title": "مفهوم اسم النطاق وأهميته: تعلم HTML من الصفر للإحتراف",
+                    "duration": "2:58",
+                    "description": "Clarifying what domain names are and their importance for websites. Explaining how domain names are acquired and managed, linking the concept to hosting."
+                },
+                {
+                    "title": "انواع الاستضافة: تعلم HTML من الصفر للإحتراف",
+                    "duration": "4:06",
+                    "description": "Introducing different types of web hosting, including shared hosting, VPS hosting, and dedicated hosting. Explaining the characteristics of each type and how they differ in terms of performance, features, and costs."
+                },
+                {
+                    "title": "الدرس التالي من وحدة استضافة المواقع: تعلم HTML من الصفر للإحتراف",
+                    "duration": "0:35",
+                    "description": "Preview of the next lesson in the module, setting expectations and foreshadowing topics like cloud hosting or more detailed hosting configuration."
+                },
+                {
+                    "title": "استضافة المواقع على Github: تعلم HTML من الصفر للإحتراف",
+                    "duration": "4:16",
+                    "description": "Introducing Github Pages as a free hosting platform specifically for HTML websites. Providing instructions on how to host a website directly from Github."
+                },
+                {
+                    "title": "كيفية اضافة صفحات جديدة لمشروع HTML : تعلم HTML من الصفر للاحتراف",
+                    "duration": "3:51",
+                    "description": "Learning to create additional HTML pages within an existing project. This video demonstrates best practices and techniques for efficiently building new pages within the context of an already established website."
+                }
+            ],
+            "total_duration": "1:27:52"
+        },
+        {
+            "day": 7,
+            "videos": [
+                {
+                    "title": "مفاهيم CSS - أول فيديو في سلسلة تعلم CSS: تعلم CSS من الصفر",
+                    "duration": "4:12",
+                    "description": "Introduction to the world of CSS (Cascading Style Sheets) and the power it offers to style and enhance the visual appearance of websites."
+                },
+                {
+                    "title": "تعلم CSS: أسئلة وأجوبة عن أهم ميزات CSS | CSS Mastery",
+                    "duration": "7:44",
+                    "description": "Addressing common questions about CSS to foster a foundational understanding of CSS's role in website design and its unique advantages for presentation."
+                }
+            ],
+            "total_duration": "12:06"
+        }
+    ],
+    "total_time_in_days": "4:06:02"
+}
