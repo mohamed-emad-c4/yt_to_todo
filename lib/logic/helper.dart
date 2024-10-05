@@ -1,11 +1,15 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/model/playList.dart';
 
 class HelperFunction {
   final Dio _dio = Dio();
-
+Future<bool> isInitialized() async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getBool('isInitialized') ?? false;
+}
   // Fetch all videos from a playlist and their details
   Future<List<VideoInfoModel>> getAllVideosInPlaylist(String playlistId) async {
     List<VideoInfoModel> videoDetailsList = [];

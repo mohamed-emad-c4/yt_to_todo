@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
+import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
 
 // PageView widget to display initial screens
@@ -9,7 +10,6 @@ Widget PageViewInitial() {
     itemCount: widgetIntial.length,
     onPageChanged: (index) {
       // Update the global variable
-      isIntialized = true;
     },
 
   );
@@ -89,7 +89,6 @@ class FeaturesScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Navigate to the next screen
-                 
                 },
                 child: const Text("التالي"),
               ),
@@ -138,7 +137,8 @@ class InitialSettingsScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Navigate to the main screen
-                  
+                                    SharePrefrenceClass().saveValuebool(value: true, key: "isInitialized");
+
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
                 },
                 child: const Text("إنهاء"),

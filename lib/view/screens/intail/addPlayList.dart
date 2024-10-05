@@ -149,12 +149,6 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-         
-        },
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
