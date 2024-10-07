@@ -3,7 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/data/databases.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import 'package:yt_to_todo/logic/roadmap_logic/ai.dart';
 import 'package:yt_to_todo/model/playList.dart';
+import 'package:yt_to_todo/view/screens/intail/current_playlist.dart';
 
 String link = "";
 
@@ -133,6 +135,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
               ),
@@ -151,9 +154,14 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-         
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CurrentPlaylist(),
+            ),
+          );
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, color: Colors.black),
       ),
     );
   }

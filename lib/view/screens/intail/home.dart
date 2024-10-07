@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
+import 'package:yt_to_todo/view/screens/intail/old_playlist.dart';
+
+import 'widgets/preview_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,102 +15,69 @@ class HomeScreen extends StatelessWidget {
         "title": "Playlist 1",
         "description": "Description for Playlist 1",
         "image": "assets/images/welcome.png",
+        "url":"This is the url for playlist 1"
       },
       {
         "title": "Playlist 2",
         "description": "Description for Playlist 2",
         "image": "assets/images/welcome.png",
+        "url":"This is the url for playlist 2"
       },
       {
         "title": "Playlist 3",
         "description": "Description for Playlist 3",
         "image": "assets/images/welcome.png",
+        "url":"This is the url for playlist 3"
       },
       {
         "title": "Playlist 4",
         "description": "Description for Playlist 4",
         "image": "assets/images/welcome.png",
+        "url":"This is the url for playlist 4"
       },
       {
         "title": "Playlist 5",
         "description": "Description for Playlist 5",
         "image": "assets/images/welcome.png",
+        "url":"This is the url for playlist 5"
       },
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("YouTube to Todo"),
+        title: const Text("YouTube to Todo",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
         centerTitle: true,
-        backgroundColor:
-            const Color.fromARGB(255, 255, 255, 255), // YouTube red color
+        
         elevation: 0, // Remove shadow for a modern look
       ),
-      body: ListView.builder(
-        itemCount: playlists.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              // Navigate to the playlist detail screen or perform an action
-              print("Tapped on ${playlists[index]['title']}");
-            },
-            child: Card(
-              margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              elevation: 4, // Add shadow for a modern look
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        playlists[index]['image'],
-                        width: 80,
-                        height: 80,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            playlists[index]['title'],
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            playlists[index]['description'],
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Icon(Icons.arrow_forward_ios),
-                  ],
-                ),
-              ),
+      body: Column(
+        children: [
+          const SizedBox(height: 16),
+          Expanded(
+            child: ListView.builder(
+              itemCount: playlists.length,
+              itemBuilder: (context, index) {
+                return Preview_Widget(
+                  ontap: () {
+Navigator.push(context, MaterialPageRoute(builder: (context) => OldPlaylist ()));                  },
+                  image: "${playlists[index]['image']}",
+                  title: '${playlists[index]['title']}',
+                  description: '${playlists[index]['description']}',
+                );
+              },
             ),
-          );
-        },
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your action here
-          Navigator.push(context,  MaterialPageRoute(builder: (context) => const AddPlaylistScreen()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AddPlaylistScreen()));
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, color: Colors.black),
       ),
     );
   }
