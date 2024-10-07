@@ -163,6 +163,7 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
         },
         child: const Icon(Icons.add, color: Colors.black),
       ),
+
     );
   }
 }
