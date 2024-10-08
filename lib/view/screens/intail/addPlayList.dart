@@ -149,6 +149,12 @@ class _AddPlaylistScreenState extends State<AddPlaylistScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          DatabaseHelper().fetchAllPlaylists();
+        },
+        child: const Icon(Icons.arrow_back),
+      ),
     );
   }
 }

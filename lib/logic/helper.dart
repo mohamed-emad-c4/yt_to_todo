@@ -1,15 +1,14 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:yt_to_todo/data/databases.dart';
+import 'package:sqflite/sqflite.dart';
+
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/model/playList.dart';
 
 class HelperFunction {
   final Dio _dio = Dio();
-Future<bool> isInitialized() async {
-  final prefs = await SharedPreferences.getInstance();
-  return prefs.getBool('isInitialized') ?? false;
-}
+
   // Fetch all videos from a playlist and their details
   Future<List<VideoInfoModel>> getAllVideosInPlaylist(String playlistId) async {
     List<VideoInfoModel> videoDetailsList = [];
@@ -30,6 +29,10 @@ Future<bool> isInitialized() async {
         );
 
         final data = response.data;
+        await DatabaseHelper().insertVideos(
+            await DatabaseHelper().database, response.data, playlistId);
+        await DatabaseHelper().addPlaylistToDatabase(response.data ); // Pass the data directly
+
         final items = data['items'];
 
         for (var item in items) {
@@ -65,6 +68,38 @@ Future<bool> isInitialized() async {
     return videoDetailsList;
   }
 
+  Future<List<String?>> getPlaylistTitle(String playlistId) async {
+    final url =
+        'https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=$playlistId&key=$API_KEY';
+    List<String?> retun = [];
+    try {
+      final response = await _dio.get(url);
+
+      if (response.statusCode == 200) {
+        final data = response.data;
+
+        // تحقق مما إذا كانت قائمة التشغيل موجودة
+        if (data['items'] != null && data['items'].isNotEmpty) {
+          retun.add(data['items'][0]['snippet']['title']);
+          retun.add(data['items'][0]['snippet']['description']);
+          retun.add(data['items'][0]['snippet']['thumbnails']['high']['url']);
+          // استرجاع عنوان قائمة التشغيل
+          return retun;
+        } else {
+          print(
+              'No items found in the response. Please check the playlist ID.');
+          return [];
+        }
+      } else {
+        print('Error: ${response.statusCode}');
+        return [];
+      }
+    } catch (e) {
+      print('Request failed with error: $e');
+      return [];
+    }
+  }
+
   // Fetch video duration by ID
   Future<String> getDurationVideo(String videoId) async {
     try {
@@ -78,7 +113,7 @@ Future<bool> isInitialized() async {
       );
 
       final duration = response.data['items'][0]['contentDetails']['duration'];
-    
+
       return extractDuration(duration);
     } catch (e) {
       log('Error fetching video duration: $e');

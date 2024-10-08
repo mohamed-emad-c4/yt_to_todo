@@ -11,7 +11,6 @@ Widget PageViewInitial() {
     onPageChanged: (index) {
       // Update the global variable
     },
-
   );
 }
 
@@ -43,7 +42,6 @@ class WelcomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Navigate to the next screen
-                
                 },
                 child: const Text(
                   "→",
@@ -137,9 +135,13 @@ class InitialSettingsScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Navigate to the main screen
-                                    SharePrefrenceClass().saveValuebool(value: true, key: "isInitialized");
+                  SharePrefrenceClass()
+                      .saveValuebool(value: true, key: "isInitialized");
 
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
                 },
                 child: const Text("إنهاء"),
               ),
