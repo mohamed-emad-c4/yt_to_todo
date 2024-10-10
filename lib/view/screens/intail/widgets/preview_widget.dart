@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yt_to_todo/logic/globalVaribul.dart';
 
 class Preview_Widget extends StatelessWidget {
    Preview_Widget({

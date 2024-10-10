@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
-import 'package:yt_to_todo/logic/helper.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
 import 'package:yt_to_todo/view/screens/intail/intail.dart';
@@ -23,16 +22,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'YT to Todo',
       theme: ThemeData(
-        appBarTheme: AppBarTheme(color: Color(0xffe5e5e5)),
+        appBarTheme: const AppBarTheme(color: Color(0xffe5e5e5)),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.black,
           ),
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color(0xffe5e5e5),
         ),
-        scaffoldBackgroundColor: Color(0xFF14213d),
+        scaffoldBackgroundColor: const Color(0xFF14213d),
         textTheme: TextTheme(
           displayLarge: TextStyle(
             color: PrimaryTextColor,
@@ -40,7 +39,6 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-       
         useMaterial3: true,
       ),
       home: isIntialized ? const HomeScreen() : PageViewInitial(),

@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:yt_to_todo/data/databases.dart';
-import 'package:sqflite/sqflite.dart';
 
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/model/playList.dart';

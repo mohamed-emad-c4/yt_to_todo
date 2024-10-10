@@ -257,7 +257,7 @@ class DatabaseHelper {
     final result = await db.query('playlist_info');
 
     // Print the result to verify the data
-    log('All playlist data: ${result}');
+    log('All playlist data: $result');
 
     return result; // Return all the retrieved data
   }
