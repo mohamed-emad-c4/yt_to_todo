@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: isIntialized ? PlaylistScreen() : PageViewInitial(),
+      home: isIntialized ? const Home() : PageViewInitial(),
     );
   }
 }

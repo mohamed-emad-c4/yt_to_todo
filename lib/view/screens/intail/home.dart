@@ -1,9 +1,30 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/view/VideoPreviewScreen.dart';
+import 'package:yt_to_todo/data/databases.dart';
+import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
-import '../../../data/databases.dart'; // Ensure sqflite library is imported
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => UpdateHomeCubit(),
+      child: BlocConsumer<UpdateHomeCubit, UpdateHomeState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
+            return const PlaylistScreen();
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
+    );
+  }
+}
 
 class PlaylistScreen extends StatefulWidget {
   const PlaylistScreen({super.key});
@@ -18,8 +39,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
   @override
   void initState() {
     super.initState();
-    playlists =
-        DatabaseHelper().getPlaylists(); // Fetch data on state initialization
+    playlists = DatabaseHelper().getPlaylists();
   }
 
   @override
@@ -32,17 +52,13 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         future: playlists,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-                child: CircularProgressIndicator()); // Loading indicator
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(
-                child: Text('Error: ${snapshot.error}')); // Error message
+            return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(
-                child: Text('No playlists found')); // No data message
+            return const Center(child: Text('No playlists found'));
           }
 
-          // Display playlists
           return ListView.builder(
             itemCount: snapshot.data!.length,
             padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -73,8 +89,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         borderRadius: const BorderRadius.vertical(
                             top: Radius.circular(12.0)),
                         child: Image.network(
-                          playlist['playlist_image'] ??
-                              'https://via.placeholder.com/150',
+                          playlist['playlist_image'] ?? 'https://via.placeholder.com/150',
                           fit: BoxFit.cover,
                           height: 150,
                           width: double.infinity,
@@ -116,7 +131,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => const PlaylistInputScreen()),
+              builder: (context) => const PlaylistInputScreen(),
+            ),
           );
         },
         child: const Icon(Icons.add),

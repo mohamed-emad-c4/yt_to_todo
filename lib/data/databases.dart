@@ -47,6 +47,7 @@ class DatabaseHelper {
         video_tittle TEXT NOT NULL,
         video_url TEXT,
         video_image TEXT,
+        video_duration TEXT,
         video_status INTEGER,
         video_days INTEGER,
         video_playlist_id TEXT,

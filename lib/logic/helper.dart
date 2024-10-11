@@ -14,6 +14,7 @@ class HelperFunction {
     log("getAllVideosInPlaylist started");
     List<VideoInfoModel> videoDetailsList = [];
     String nextPageToken = '';
+    String durationVideo = 'N/A';
     bool hasNextPage = true;
     int start =
         await SharePrefrenceClass().getVlue(key: "start_at", defaultValue: 0);
@@ -44,7 +45,7 @@ class HelperFunction {
           final videoUrl = 'https://www.youtube.com/watch?v=$videoId';
 
           final duration = await getDurationVideo(videoId);
-
+durationVideo = duration;
           final videoInfo = VideoInfoModel(
             title: title,
             url: videoUrl,
@@ -60,6 +61,7 @@ class HelperFunction {
             "video_image": thumbnailUrl,
             "video_status": 0,
             "video_days": 0,
+            "video_duration": durationVideo,
           };
 
           await DatabaseHelper().insertVideo(insertVideo);
@@ -109,6 +111,7 @@ class HelperFunction {
           retun.add(data['items'][0]['snippet']['title']);
           retun.add(data['items'][0]['snippet']['description']);
           retun.add(data['items'][0]['snippet']['thumbnails']['high']['url']);
+          
           // استرجاع عنوان قائمة التشغيل
           return retun;
         } else {

@@ -1,9 +1,8 @@
 import 'dart:developer' as dev;
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:yt_to_todo/data/databases.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import '../../../logic/cubit/update_home_cubit.dart';
 
 class PlaylistInputScreen extends StatefulWidget {
   const PlaylistInputScreen({super.key});
@@ -43,23 +42,32 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
         _isLoading = true;
       });
 
-      await HelperFunction().getAllVideosInPlaylist(playlistId);
+      try {
+        await HelperFunction().getAllVideosInPlaylist(playlistId);
 
-      dev.log('URL: $url');
-      dev.log('Notes: $notes');
+        dev.log('URL: $url');
+        dev.log('Notes: $notes');
 
-      // Clear the text fields after submission
-      _urlController.clear();
-      _notesController.clear();
+        // Clear the text fields after submission
+        _urlController.clear();
+        _notesController.clear();
 
-      setState(() {
-        _isLoading = false;
-      });
+        // Show a success message
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Playlist added successfully')),
+        );
 
-      // Show a success message
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Playlist added successfully')),
-      );
+        // Update the home screen
+        BlocProvider.of<UpdateHomeCubit>(context).updateHome();
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: $e')),
+        );
+      } finally {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -129,14 +137,6 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          List<Map<String, dynamic>> playlistAllVideos = await DatabaseHelper()
-              .getVideosByPlaylistId("PLZEjCjHzGS_aSTPTgP5yd1nzAtYz6z3m6");
-        
-        },
-        child: const Icon(Icons.arrow_back),
       ),
     );
   }

@@ -24,7 +24,8 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
 
   Future<void> _fetchVideos() async {
     // Fetch videos from the database using playlistId
-    playlistAllVideos = await DatabaseHelper().getVideosByPlaylistId(widget.playlistId);
+    playlistAllVideos =
+        await DatabaseHelper().getVideosByPlaylistId(widget.playlistId);
     setState(() {
       _isLoading = false;
     }); // Update the state to display the data
@@ -46,7 +47,8 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
                   itemBuilder: (context, index) {
                     final video = playlistAllVideos[index];
                     return Card(
-                      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 8.0),
                       elevation: 4.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -65,7 +67,8 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ClipRRect(
-                              borderRadius: const BorderRadius.vertical(top: Radius.circular(12.0)),
+                              borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(12.0)),
                               child: Image.network(
                                 video['video_image'],
                                 fit: BoxFit.cover,
@@ -78,11 +81,19 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
                               child: Text(
                                 video['video_tittle'],
                                 style: const TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
+                            Text(
+                              " ${video['video_duration']}",
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            const SizedBox(height: 8.0),
                           ],
                         ),
                       ),

@@ -5,7 +5,7 @@ import '../../../../model/playList.dart';
 class PlaylistPreviewAll extends StatelessWidget {
   final PlaylistPreview playlist;
 
-  const PlaylistPreviewAll({Key? key, required this.playlist}) : super(key: key);
+  const PlaylistPreviewAll({super.key, required this.playlist});
 
   @override
   Widget build(BuildContext context) {
