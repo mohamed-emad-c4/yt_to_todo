@@ -1,4 +1,5 @@
 import 'dart:developer' as dev;
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/data/databases.dart';
@@ -128,6 +129,14 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          List<Map<String, dynamic>> playlistAllVideos = await DatabaseHelper()
+              .getVideosByPlaylistId("PLZEjCjHzGS_aSTPTgP5yd1nzAtYz6z3m6");
+        
+        },
+        child: const Icon(Icons.arrow_back),
       ),
     );
   }

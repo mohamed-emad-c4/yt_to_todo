@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/view/VideoPreviewScreen.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
 import '../../../data/databases.dart'; // Ensure sqflite library is imported
 
@@ -49,7 +50,14 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               final playlist = snapshot.data![index];
               return GestureDetector(
                 onTap: () {
-                  log("${playlist['playlist_id']}");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VideoPreviewScreen(
+                        playlistId: playlist['playlist_id'],
+                      ),
+                    ),
+                  );
                 },
                 child: Card(
                   margin: const EdgeInsets.symmetric(
