@@ -11,13 +11,14 @@ class HelperFunction {
 
   // Fetch all videos from a playlist and their details
   Future<List<VideoInfoModel>> getAllVideosInPlaylist(String playlistId) async {
+    log("getAllVideosInPlaylist started");
     List<VideoInfoModel> videoDetailsList = [];
     String nextPageToken = '';
     bool hasNextPage = true;
     int start =
-        await SharePrefrenceClass().getVlue(key: "start_at", defaultValue: 0) ??
-            0;
+        await SharePrefrenceClass().getVlue(key: "start_at", defaultValue: 0);
     int end = 0;
+    Map<String, dynamic> insertVideo = {};
     try {
       while (hasNextPage) {
         final response = await _dio.get(
@@ -51,11 +52,20 @@ class HelperFunction {
             id: videoId,
             duration: duration,
             image: thumbnailUrl,
-            
           );
+          insertVideo = {
+            "video_playlist_id": playlistId,
+            "video_tittle": title,
+            "video_url": videoUrl,
+            "video_image": thumbnailUrl,
+            "video_status": 0,
+            "video_days": 0,
+          };
 
+          await DatabaseHelper().insertVideo(insertVideo);
           videoDetailsList.add(videoInfo);
         }
+
         log(sumTotalTime(videoDetailsList));
         nextPageToken = data['nextPageToken'] ?? '';
         hasNextPage = nextPageToken.isNotEmpty;
@@ -63,18 +73,19 @@ class HelperFunction {
       end = start + videoDetailsList.length;
       List<String?> data = await HelperFunction().getPlaylistInfo(playlistId);
       Map<String, dynamic> insertPlaylist = {
-        "playlistId": playlistId,
-        "title": data[0],
-        "description": data[1],
-        "image": data[2],
-        "totalVideos": videoDetailsList.length.toString(),
-        "totalTime": sumTotalTime(videoDetailsList).toString(),
-        "notes": "",
+        "playlist_id": playlistId,
+        "playlist_real_name": data[0],
+        "playlist_image": data[2],
+        "playlist_total_videos": videoDetailsList.length.toString(),
+        "playlist_total_time": sumTotalTime(videoDetailsList).toString(),
+        "playlist_notes": "",
         "playlist_start_at": start,
         "playlist_end_at": end,
         "playlist_status": 0,
       };
-
+    await SharePrefrenceClass().saveValueint(value: end, key: "start_at");
+      await DatabaseHelper().insertPlaylist(insertPlaylist);
+      log(" map is :: $insertPlaylist");
       log('Total videos fetched: ${videoDetailsList.length}');
     } catch (e) {
       log('Error fetching playlist videos: $e');

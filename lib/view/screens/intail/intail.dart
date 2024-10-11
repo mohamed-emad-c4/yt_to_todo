@@ -138,10 +138,10 @@ class InitialSettingsScreen extends StatelessWidget {
                   SharePrefrenceClass()
                       .saveValuebool(value: true, key: "isInitialized");
 
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>  VideoPlaylistScreen()));
+                  // Navigator.pushReplacement(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) =>  VideoPlaylistScreen()));
                 },
                 child: const Text("إنهاء"),
               ),

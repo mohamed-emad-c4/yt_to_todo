@@ -1,105 +1,58 @@
+/* --- Begin lib\view\screens\intail\widgets\PlaylistDetailPreview.dart --- */
 import 'package:flutter/material.dart';
-
 import '../../../../model/playList.dart';
 
-class PlaylistDetailPreview extends StatelessWidget {
-  final PlaylistPreview video;
-
-  const PlaylistDetailPreview({super.key, required this.video});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(video.title),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.network(
-              video.thumbnailUrl,
-              width: double.infinity,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 16),
-            Text(
-              video.title,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              video.description,
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 16),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Add to favorites
-                },
-                child: const Text('Start Learning'),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class PlaylistPreviewAll extends StatelessWidget {
-  final PlaylistPreview video;
+  final PlaylistPreview playlist;
 
-  const PlaylistPreviewAll({super.key, required this.video});
+  const PlaylistPreviewAll({Key? key, required this.playlist}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        // Navigate to detailed view or play the video
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => PlaylistDetailPreview(video: video),
+    return Card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.network(
+            playlist.playlistImage,
+            fit: BoxFit.cover,
+            height: 150,
+            width: double.infinity,
           ),
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.network(
-              video.thumbnailUrl,
-              width: 120,
-              height: 90,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    video.title,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  playlist.playlistRealName,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    video.description,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Total Videos: ${playlist.playlistTotalVideos}',
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Total Time: ${playlist.playlistTotalTime}',
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
-
+/* --- End lib\view\screens\intail\widgets\PlaylistDetailPreview.dart --- */

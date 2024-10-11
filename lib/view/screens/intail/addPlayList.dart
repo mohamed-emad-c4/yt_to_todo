@@ -1,8 +1,8 @@
-import 'dart:developer';
+import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/data/databases.dart';
 import 'package:yt_to_todo/logic/helper.dart';
-import 'package:yt_to_todo/model/playList.dart';
 
 class PlaylistInputScreen extends StatefulWidget {
   const PlaylistInputScreen({super.key});
@@ -16,29 +16,44 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
   final TextEditingController _notesController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String playlistId = '';
+  bool _isLoading = false;
+
   String extractPlaylistId(String url) {
     // Regular expression to match the playlist ID
     RegExp regExp = RegExp(r'list=([a-zA-Z0-9_-]+)');
     Match? match = regExp.firstMatch(url);
-    if (match != null && match.groupCount >= 1) {
-      return match.group(1)!;
-    }
-    return '';
+    return match?.group(1) ?? '';
   }
 
-  void _insertPlaylist() async {
+  Future<void> _insertPlaylist() async {
     if (_formKey.currentState!.validate()) {
       String url = _urlController.text;
       String notes = _notesController.text;
       playlistId = extractPlaylistId(url);
+
+      if (playlistId.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Invalid playlist URL')),
+        );
+        return;
+      }
+
+      setState(() {
+        _isLoading = true;
+      });
+
       await HelperFunction().getAllVideosInPlaylist(playlistId);
 
-      log('URL: $url');
-      log('Notes: $notes');
+      dev.log('URL: $url');
+      dev.log('Notes: $notes');
 
       // Clear the text fields after submission
       _urlController.clear();
       _notesController.clear();
+
+      setState(() {
+        _isLoading = false;
+      });
 
       // Show a success message
       ScaffoldMessenger.of(context).showSnackBar(
@@ -61,9 +76,9 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Playlist Manager'),
+        title: const Text('Add Playlist'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
@@ -76,6 +91,8 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
                   labelText: 'Playlist URL',
                   hintText: 'Enter the URL of the playlist',
                   border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Colors.white,
                 ),
                 validator: _validateUrl,
               ),
@@ -86,30 +103,31 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
                   labelText: 'Notes',
                   hintText: 'Enter any notes about the playlist',
                   border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Colors.white,
                 ),
                 maxLines: 3,
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _insertPlaylist,
-                child: const Text('Insert'),
-              ),
+              if (_isLoading)
+                const Center(child: CircularProgressIndicator())
+              else
+                ElevatedButton(
+                  onPressed: _insertPlaylist,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                  child: const Text(
+                    'Insert',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          // getPlaylistInfo(); Done
-          // List<String?> data = await HelperFunction()
-          //     .getPlaylistInfo("PLiYa0cuKkwo5N723E3qmghvOfiwHhEiJf");
-          // log(data.toString());
-          // log("===========================================================");
-          // //??Done
-          // // log(await HelperFunction().getDurationVideo("MRdfx-rNuZk"));
-          // log(HelperFunction().extractDuration("00:10:05"));
-        },
-        child: const Icon(Icons.arrow_back),
       ),
     );
   }
