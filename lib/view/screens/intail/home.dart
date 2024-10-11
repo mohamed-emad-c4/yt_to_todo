@@ -1,83 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
-import 'package:yt_to_todo/view/screens/intail/old_playlist.dart';
+import 'package:yt_to_todo/view/screens/intail/widgets/PlaylistDetailPreview.dart';
 
-import 'widgets/preview_widget.dart';
+import '../../../model/playList.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class VideoPlaylistScreen extends StatelessWidget {
+  final List<PlaylistPreview> videos = [
+    PlaylistPreview(
+      title: 'Flutter Tutorial for Beginners',
+      description:
+          'Learn Flutter from scratch with this comprehensive tutorial.',
+      thumbnailUrl: 'https://via.placeholder.com/150',
+    ),
+    PlaylistPreview(
+      title: 'Dart Programming Language',
+      description: 'A deep dive into the Dart programming language.',
+      thumbnailUrl: 'https://via.placeholder.com/150',
+    ),
+    PlaylistPreview(
+      title: 'Flutter Widget of the Week',
+      description: 'Explore the latest Flutter widgets in this weekly series.',
+      thumbnailUrl: 'https://via.placeholder.com/150',
+    ),
+    // Add more videos as needed
+  ];
+
+  VideoPlaylistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Dummy data for the playlists
-    final List<Map<String, dynamic>> playlists = [
-      {
-        "title": "Playlist 1",
-        "description": "Description for Playlist 1",
-        "image": "assets/images/welcome.png",
-        "url":"This is the url for playlist 1"
-      },
-      {
-        "title": "Playlist 2",
-        "description": "Description for Playlist 2",
-        "image": "assets/images/welcome.png",
-        "url":"This is the url for playlist 2"
-      },
-      {
-        "title": "Playlist 3",
-        "description": "Description for Playlist 3",
-        "image": "assets/images/welcome.png",
-        "url":"This is the url for playlist 3"
-      },
-      {
-        "title": "Playlist 4",
-        "description": "Description for Playlist 4",
-        "image": "assets/images/welcome.png",
-        "url":"This is the url for playlist 4"
-      },
-      {
-        "title": "Playlist 5",
-        "description": "Description for Playlist 5",
-        "image": "assets/images/welcome.png",
-        "url":"This is the url for playlist 5"
-      },
-    ];
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text("YouTube to Todo",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-        centerTitle: true,
-        
-        elevation: 0, // Remove shadow for a modern look
+        title: const Text('Video Playlist'),
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 16),
-          Expanded(
-            child: ListView.builder(
-              itemCount: playlists.length,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 600) {
+            // Use GridView for tablet screens
+            return GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1.5,
+              ),
+              itemCount: videos.length,
               itemBuilder: (context, index) {
-                return Preview_Widget(
-                  ontap: () {
-Navigator.push(context, MaterialPageRoute(builder: (context) => OldPlaylist ()));                  },
-                  image: "${playlists[index]['image']}",
-                  title: '${playlists[index]['title']}',
-                  description: '${playlists[index]['description']}',
-                );
+                return PlaylistPreviewAll(video: videos[index]);
               },
-            ),
-          ),
-        ],
+            );
+          } else {
+            // Use ListView for mobile screens
+            return ListView.builder(
+              itemCount: videos.length,
+              itemBuilder: (context, index) {
+                return PlaylistPreviewAll(video: videos[index]);
+              },
+            );
+          }
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your action here
+          // Add your onPressed code here
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => const AddPlaylistScreen()));
+                  builder: (context) => const PlaylistInputScreen()));
         },
-        child: const Icon(Icons.add, color: Colors.black),
+        child: const Icon(Icons.add),
       ),
     );
   }

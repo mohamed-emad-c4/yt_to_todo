@@ -5,6 +5,7 @@ class VideoInfoModel {
   final String id;
   final String duration;
   final String image;
+  
 
   VideoInfoModel({
     required this.title,
@@ -36,4 +37,15 @@ class VideoInfoModel {
       image: map['image'],
     );
   }
+}
+class PlaylistPreview {
+  final String title;
+  final String description;
+  final String thumbnailUrl;
+
+  PlaylistPreview({
+    required this.title,
+    required this.description,
+    required this.thumbnailUrl,
+  });
 }

@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color(0xffe5e5e5),
         ),
-        scaffoldBackgroundColor: const Color(0xFF14213d),
         textTheme: TextTheme(
           displayLarge: TextStyle(
             color: PrimaryTextColor,
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: isIntialized ? const HomeScreen() : PageViewInitial(),
+      home: isIntialized ? VideoPlaylistScreen() : PageViewInitial(),
     );
   }
 }

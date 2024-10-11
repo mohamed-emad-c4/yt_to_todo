@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:yt_to_todo/data/databases.dart';
 
 import 'package:yt_to_todo/logic/globalVaribul.dart';
+import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/model/playList.dart';
 
 class HelperFunction {
@@ -13,7 +14,10 @@ class HelperFunction {
     List<VideoInfoModel> videoDetailsList = [];
     String nextPageToken = '';
     bool hasNextPage = true;
-
+    int start =
+        await SharePrefrenceClass().getVlue(key: "start_at", defaultValue: 0) ??
+            0;
+    int end = 0;
     try {
       while (hasNextPage) {
         final response = await _dio.get(
@@ -28,9 +32,6 @@ class HelperFunction {
         );
 
         final data = response.data;
-        await DatabaseHelper().insertVideos(
-            await DatabaseHelper().database, response.data, playlistId);
-        await DatabaseHelper().addPlaylistToDatabase(response.data ); // Pass the data directly
 
         final items = data['items'];
 
@@ -50,14 +51,29 @@ class HelperFunction {
             id: videoId,
             duration: duration,
             image: thumbnailUrl,
+            
           );
 
           videoDetailsList.add(videoInfo);
         }
-
+        log(sumTotalTime(videoDetailsList));
         nextPageToken = data['nextPageToken'] ?? '';
         hasNextPage = nextPageToken.isNotEmpty;
       }
+      end = start + videoDetailsList.length;
+      List<String?> data = await HelperFunction().getPlaylistInfo(playlistId);
+      Map<String, dynamic> insertPlaylist = {
+        "playlistId": playlistId,
+        "title": data[0],
+        "description": data[1],
+        "image": data[2],
+        "totalVideos": videoDetailsList.length.toString(),
+        "totalTime": sumTotalTime(videoDetailsList).toString(),
+        "notes": "",
+        "playlist_start_at": start,
+        "playlist_end_at": end,
+        "playlist_status": 0,
+      };
 
       log('Total videos fetched: ${videoDetailsList.length}');
     } catch (e) {
@@ -67,7 +83,7 @@ class HelperFunction {
     return videoDetailsList;
   }
 
-  Future<List<String?>> getPlaylistTitle(String playlistId) async {
+  Future<List<String?>> getPlaylistInfo(String playlistId) async {
     final url =
         'https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=$playlistId&key=$API_KEY';
     List<String?> retun = [];
@@ -161,8 +177,6 @@ class HelperFunction {
     totalSeconds %= 3600;
     final totalMinutes = totalSeconds ~/ 60;
     totalSeconds %= 60;
-
-    log('Total time: ${totalHours.toString().padLeft(2, '0')}:${totalMinutes.toString().padLeft(2, '0')}:${totalSeconds.toString().padLeft(2, '0')}');
 
     return '${totalHours.toString().padLeft(2, '0')}:${totalMinutes.toString().padLeft(2, '0')}:${totalSeconds.toString().padLeft(2, '0')}';
   }

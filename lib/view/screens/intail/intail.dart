@@ -141,7 +141,7 @@ class InitialSettingsScreen extends StatelessWidget {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
+                          builder: (context) =>  VideoPlaylistScreen()));
                 },
                 child: const Text("إنهاء"),
               ),
