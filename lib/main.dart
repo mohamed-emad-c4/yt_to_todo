@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
@@ -18,7 +21,24 @@ class MyApp extends StatelessWidget {
   bool isIntialized;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return BlocProvider(
+      create: (context) => UpdateHomeCubit(),
+      child: matrial(isIntialized: isIntialized),
+    );
+  }
+}
+
+class matrial extends StatelessWidget {
+  const matrial({
+    super.key,
+    required this.isIntialized,
+  });
+
+  final bool isIntialized;
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'YT to Todo',
       theme: ThemeData(

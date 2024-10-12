@@ -69,6 +69,8 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
         });
       }
     }
+    Navigator.pop(context);
+    BlocProvider.of<UpdateHomeCubit>(context).updateHome();
   }
 
   String? _validateUrl(String? value) {

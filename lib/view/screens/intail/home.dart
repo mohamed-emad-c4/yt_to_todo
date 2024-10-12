@@ -10,19 +10,13 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => UpdateHomeCubit(),
-      child: BlocConsumer<UpdateHomeCubit, UpdateHomeState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
-            return const PlaylistScreen();
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        },
-      ),
-    );
+    return BlocBuilder<UpdateHomeCubit, UpdateHomeState>(builder: (context, state) {
+    if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
+          return const PlaylistScreen();
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+    });
   }
 }
 
@@ -89,7 +83,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         borderRadius: const BorderRadius.vertical(
                             top: Radius.circular(12.0)),
                         child: Image.network(
-                          playlist['playlist_image'] ?? 'https://via.placeholder.com/150',
+                          playlist['playlist_image'] ??
+                              'https://via.placeholder.com/150',
                           fit: BoxFit.cover,
                           height: 150,
                           width: double.infinity,
