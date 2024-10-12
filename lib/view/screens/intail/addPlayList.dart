@@ -2,6 +2,7 @@ import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import 'package:yt_to_todo/logic/roadmap_logic/ai.dart';
 import '../../../logic/cubit/update_home_cubit.dart';
 
 class PlaylistInputScreen extends StatefulWidget {
@@ -26,6 +27,8 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
   }
 
   Future<void> _insertPlaylist() async {
+    GiminiAi().aiResponse();
+
     if (_formKey.currentState!.validate()) {
       String url = _urlController.text;
       String notes = _notesController.text;
@@ -124,8 +127,9 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
                 const Center(child: CircularProgressIndicator())
               else
                 ElevatedButton(
+                  
                   onPressed: _insertPlaylist,
-                  style: ElevatedButton.styleFrom(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800],
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
@@ -133,7 +137,7 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
                   ),
                   child: const Text(
                     'Insert',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18,color: Colors.white),
                   ),
                 ),
             ],
