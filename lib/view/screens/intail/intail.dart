@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
 

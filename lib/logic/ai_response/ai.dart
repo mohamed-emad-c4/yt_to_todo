@@ -93,8 +93,8 @@ Here is the full playlist:
 
   String text = response.text.toString();
   
-  String splitted_text = text.split("```json")[1].split("```")[0];
-  var decodedData = jsonDecode(splitted_text);
+  String splittedText = text.split("```json")[1].split("```")[0];
+  var decodedData = jsonDecode(splittedText);
   log (decodedData[2]["day"].toString());
 
 }
