@@ -59,7 +59,7 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: isIntialized ? const Home() : PageViewInitial(),
+      home: isIntialized ? const Home() : const PageViewInitial(),
     );
   }
 }
