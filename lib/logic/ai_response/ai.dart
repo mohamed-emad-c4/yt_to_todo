@@ -95,7 +95,7 @@ Here is the full playlist:
   
   String splitted_text = text.split("```json")[1].split("```")[0];
   var decodedData = jsonDecode(splitted_text);
-  log (decodedData[2]["day"].toString());
+  log (decodedData[2]["videos"][0]["task"].toString());
 
 }
 }
