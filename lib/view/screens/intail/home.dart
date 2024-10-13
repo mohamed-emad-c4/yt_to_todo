@@ -10,12 +10,13 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UpdateHomeCubit, UpdateHomeState>(builder: (context, state) {
-    if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
-          return const PlaylistScreen();
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
+    return BlocBuilder<UpdateHomeCubit, UpdateHomeState>(
+        builder: (context, state) {
+      if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
+        return const PlaylistScreen();
+      } else {
+        return const Center(child: CircularProgressIndicator());
+      }
     });
   }
 }
@@ -41,6 +42,12 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('All Playlists'),
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.),
+        //     onPressed: () {},
+        //   ),
+        // ],
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: playlists,
