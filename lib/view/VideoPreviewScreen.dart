@@ -1,9 +1,7 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yt_to_todo/logic/helper.dart';
-
 import '../data/databases.dart';
 
 class VideoPreviewScreen extends StatefulWidget {
@@ -49,10 +47,11 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('${widget.allInfoPlaylist[0]['playlist_real_name']}'),
+        title: Text(_isPlaylistInfoLoaded
+            ? '${widget.allInfoPlaylist.isNotEmpty ? widget.allInfoPlaylist[0]['playlist_real_name'] : 'Playlist'}'
+            : 'Loading...'), // تحقق مما إذا كانت بيانات القائمة قد تم تحميلها
       ),
-      body: _isLoading ||
-              !_isPlaylistInfoLoaded // تحقق من تحميل بيانات الفيديو و القائمة
+      body: _isLoading || !_isPlaylistInfoLoaded // تحقق من تحميل بيانات الفيديو و القائمة
           ? const Center(child: CircularProgressIndicator())
           : playlistAllVideos.isEmpty
               ? const Center(child: Text('No videos found'))
