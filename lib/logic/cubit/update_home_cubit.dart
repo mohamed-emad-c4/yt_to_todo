@@ -1,18 +1,22 @@
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 part 'update_home_state.dart';
-
 class UpdateHomeCubit extends Cubit<UpdateHomeState> {
   UpdateHomeCubit() : super(UpdateHomeInitial());
 
-  // Trigger loading state when starting the update
-  void startLoading() {
-    emit(UpdateHomeLoading());
-  }
-
-  // Trigger when home needs to be updated (i.e., playlist is added)
-  void updateHome() {
-    emit(UpdateHomeLoaded());
+  Future<void> updateHome() async {
+    try {
+      emit(UpdateHomeLoading());
+      
+      // Fetch the updated playlists from your database
+      await Future.delayed(Duration(seconds: 1)); // Simulate a network/db call
+      
+      // After fetching data, emit UpdateHomeLoaded
+      emit(UpdateHomeLoaded());
+    } catch (e) {
+      emit(UpdateHomeError());
+    }
   }
 }

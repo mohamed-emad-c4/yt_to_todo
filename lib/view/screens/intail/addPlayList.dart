@@ -27,9 +27,12 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
   }
 
   Future<void> _insertPlaylist() async {
-    GiminiAi().aiResponse();
+  if (_formKey.currentState!.validate()) {
+    setState(() {
+      _isLoading = true;
+    });
 
-    if (_formKey.currentState!.validate()) {
+    try {
       String url = _urlController.text;
       String notes = _notesController.text;
       playlistId = extractPlaylistId(url);
@@ -41,40 +44,26 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
         return;
       }
 
+      await HelperFunction().getAllVideosInPlaylist(playlistId);
+      dev.log('URL: $url');
+      dev.log('Notes: $notes');
+
+      // Notify the home page about the update using Cubit
+      BlocProvider.of<UpdateHomeCubit>(context).updateHome();
+
+      // Return true to notify the previous screen to reload data
+      Navigator.pop(context, true);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
+    } finally {
       setState(() {
-        _isLoading = true;
+        _isLoading = false;
       });
-
-      try {
-        await HelperFunction().getAllVideosInPlaylist(playlistId);
-
-        dev.log('URL: $url');
-        dev.log('Notes: $notes');
-
-        // Clear the text fields after submission
-        _urlController.clear();
-        _notesController.clear();
-
-        // Show a success message
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Playlist added successfully')),
-        );
-
-        // Update the home screen
-        BlocProvider.of<UpdateHomeCubit>(context).updateHome();
-      } catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e')),
-        );
-      } finally {
-        setState(() {
-          _isLoading = false;
-        });
-      }
     }
-    Navigator.pop(context);
-    BlocProvider.of<UpdateHomeCubit>(context).updateHome();
   }
+}
 
   String? _validateUrl(String? value) {
     if (value == null || value.isEmpty) {
@@ -127,9 +116,9 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
                 const Center(child: CircularProgressIndicator())
               else
                 ElevatedButton(
-                  
                   onPressed: _insertPlaylist,
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800],
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey[800],
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
@@ -137,7 +126,7 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
                   ),
                   child: const Text(
                     'Insert',
-                    style: TextStyle(fontSize: 18,color: Colors.white),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
             ],

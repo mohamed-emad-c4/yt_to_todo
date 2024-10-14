@@ -8,3 +8,5 @@ final class UpdateHomeInitial extends UpdateHomeState {}
 final class UpdateHomeLoading extends UpdateHomeState {}
 
 final class UpdateHomeLoaded extends UpdateHomeState {}
+
+final class UpdateHomeError extends UpdateHomeState {}

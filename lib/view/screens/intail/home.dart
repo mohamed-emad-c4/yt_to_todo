@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yt_to_todo/view/VideoPreviewScreen.dart';
-import 'package:yt_to_todo/data/databases.dart';
 import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
+
+import '../../../data/databases.dart';
+import '../../VideoPreviewScreen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,13 +12,18 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UpdateHomeCubit, UpdateHomeState>(
-        builder: (context, state) {
-      if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
-        return const PlaylistScreen();
-      } else {
-        return const Center(child: CircularProgressIndicator());
-      }
-    });
+      builder: (context, state) {
+        if (state is UpdateHomeLoaded || state is UpdateHomeInitial) {
+          return const PlaylistScreen();
+        } else if (state is UpdateHomeLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is UpdateHomeError) {
+          return const Center(child: Text('Error: '));
+        } else {
+          return const Center(child: Text('Something went wrong'));
+        }
+      },
+    );
   }
 }
 
@@ -42,12 +48,6 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('All Playlists'),
-        // actions: [
-        //   IconButton(
-        //     icon: const Icon(Icons.),
-        //     onPressed: () {},
-        //   ),
-        // ],
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: playlists,
@@ -129,13 +129,20 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
+        onPressed: () async {
+          final result = await Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => const PlaylistInputScreen(),
             ),
           );
+
+          if (result == true) {
+            // If a playlist was added, reload the playlists
+            setState(() {
+              playlists = DatabaseHelper().getPlaylists(); // refresh playlists
+            });
+          }
         },
         child: const Icon(Icons.add),
       ),
