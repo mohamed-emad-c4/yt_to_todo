@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:yt_to_todo/generated/l10n.dart';
 import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
 import 'package:yt_to_todo/view/screens/roadmap/all_days_view_roadmap.dart';
@@ -20,9 +21,9 @@ class Home extends StatelessWidget {
         } else if (state is UpdateHomeLoading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is UpdateHomeError) {
-          return const Center(child: Text('Error: '));
+          return  Center(child: Text('${S.of(context).error}: '));
         } else {
-          return const Center(child: Text('Something went wrong'));
+          return  Center(child: Text('${S.of(context).something_went_wrong} '));
         }
       },
     );
@@ -50,7 +51,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('All Playlists'),
+        title:  Text('${S.of(context).all_Playlists}'),
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: playlists,
@@ -58,9 +59,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('${S.of(context).error}: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('No playlists found'));
+            return  Center(child: Text('${S.of(context).no_playlists_found}'));
           }
 
           return ListView.builder(
@@ -85,7 +86,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                   const SizedBox(height: 20),
                   ListTile(
                     leading: const Icon(Icons.playlist_play),
-                    title: Text("View Playlist"),
+                    title: Text("${S.of(context).view_Playlist}"),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -100,7 +101,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.directions_run),
-                    title: Text("View Playlist Roadmap"),
+                    title: Text("${S.of(context).view_Playlist_Roadmap}"),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -160,7 +161,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "Total Videos: ${playlist['playlist_total_videos'] ?? 0} \nTotal Time: ${playlist['playlist_total_time'] ?? 0}",
+                              "${S.of(context).total_Videos}: ${playlist['playlist_total_videos'] ?? 0} \n${S.of(context).total_Time}: ${playlist['playlist_total_time'] ?? 0}",
                               style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 16,

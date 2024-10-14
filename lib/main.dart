@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
 import 'package:yt_to_todo/view/screens/intail/intail.dart';
-import 'view/screens/roadmap/all_days_view_roadmap.dart';
+import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +21,20 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({super.key, required this.isIntialized});
   bool isIntialized;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => UpdateHomeCubit(),
-      child: matrial(isIntialized: isIntialized),
+      child: BlocListener<UpdateHomeCubit, UpdateHomeState>(
+        listener: (context, state) {
+          if (state is UpdateHomeLanguageChanged) {
+            // تغيير اللغة في GetMaterialApp
+            Get.updateLocale(state.locale);
+          }
+        },
+        child: matrial(isIntialized: isIntialized),
+      ),
     );
   }
 }
@@ -39,8 +49,20 @@ class matrial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = context.select((UpdateHomeCubit cubit) => cubit.state is UpdateHomeLanguageChanged
+        ? (cubit.state as UpdateHomeLanguageChanged).locale
+        : const Locale('ar')); // اللغة الافتراضية
+
     return GetMaterialApp(
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
+      locale: locale,
       title: 'YT to Todo',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Color(0xffe5e5e5)),
@@ -61,9 +83,7 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:
-     
-      isIntialized ? const Home() : const PageViewInitial(),
+      home: isIntialized ? const Home() : const PageViewInitial(),
     );
   }
 }

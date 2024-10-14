@@ -1,0 +1,34 @@
+{
+    "all_Playlists": "All Playlists",
+    "all_Videos": "All Videos",
+    "add_Playlist": "Add Playlist",
+    "total_Time": "Total Time",
+    "total_Videos": "Total Videos",
+    "insert": "Insert",
+    "delete": "Delete",
+    "view_Playlist": "View Playlist",
+    "view_Playlist_Roadmap": "View Playlist Roadmap",
+    "duration": "Duration",
+    "the_Playlist_Roadmap": "The Playlist Roadmap",
+    "video": "Video",
+    "title": "Title",
+    "no_playlists_found": "No playlists found",
+    "enter_any_notes_about_the_playlist": "Enter any notes about the playlist",
+    "notes": "Notes",
+    "enter_the_URL_of_the_playlist": "Enter the URL of the playlist",
+    "please_enter_a_URL": "Please enter a URL",
+    "error": "error",
+    "invalid_playlist_URL": "Invalid playlist URL",
+    "url": "URL",
+    "please_enter_a_valid_youtube_playlist_URL": "Please enter a valid YouTube playlist URL",
+    "playlist_url": "Playlist URL",
+    "playlist_notes": "Playlist Notes",
+    "something_went_wrong": "Something went wrong",
+    "all_days_roadmap": "All Days Roadmap",
+    "loading": "Loading...",
+    "no_videos_found": "No videos found",
+    "could_not_launch": "Could not launch"
+
+
+
+}

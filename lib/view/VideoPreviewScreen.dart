@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:yt_to_todo/generated/l10n.dart';
 import 'package:yt_to_todo/logic/helper.dart';
 import '../data/databases.dart';
 
@@ -49,12 +50,12 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
       appBar: AppBar(
         title: Text(_isPlaylistInfoLoaded
             ? '${widget.allInfoPlaylist.isNotEmpty ? widget.allInfoPlaylist[0]['playlist_real_name'] : 'Playlist'}'
-            : 'Loading...'), // تحقق مما إذا كانت بيانات القائمة قد تم تحميلها
+            : '${S.of(context).loading}',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),), // تحقق مما إذا كانت بيانات القائمة قد تم تحميلها
       ),
       body: _isLoading || !_isPlaylistInfoLoaded // تحقق من تحميل بيانات الفيديو و القائمة
           ? const Center(child: CircularProgressIndicator())
           : playlistAllVideos.isEmpty
-              ? const Center(child: Text('No videos found'))
+              ?  Center(child: Text('${S.of(context).no_videos_found}'))
               : Column(
                   children: [
                     const SizedBox(height: 16.0),
@@ -78,7 +79,7 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
                                 if (await canLaunch(url)) {
                                   await launch(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw '${S.of(context).could_not_launch} $url';
                                 }
                               },
                               child: Column(

@@ -1,5 +1,6 @@
 /* --- Begin lib\view\screens\intail\widgets\PlaylistDetailPreview.dart --- */
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/generated/l10n.dart';
 import '../../../../model/playList.dart';
 
 class PlaylistPreviewAll extends StatelessWidget {
@@ -33,7 +34,7 @@ class PlaylistPreviewAll extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Total Videos: ${playlist.playlistTotalVideos}',
+                  '${S.of(context).total_Videos}: ${playlist.playlistTotalVideos}',
                   style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
@@ -41,7 +42,7 @@ class PlaylistPreviewAll extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Total Time: ${playlist.playlistTotalTime}',
+                  '${S.of(context).url}: ${playlist.playlistTotalTime}',
                   style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,

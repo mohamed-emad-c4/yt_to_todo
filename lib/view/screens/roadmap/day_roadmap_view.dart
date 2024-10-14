@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../generated/l10n.dart';
 import '../intail/widgets/roadmap_videos_listview.dart';
 
 class RoadmapView extends StatelessWidget {
@@ -17,8 +18,8 @@ class RoadmapView extends StatelessWidget {
           isDone: isDone,
           onTap: () {},
           videoImage: 'assets/images/lan.png',
-          title: 'Video',
-          duration: 'Duration',
+          title: '${S.of(context).video}',
+          duration: '${S.of(context).duration}',
         )));
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/generated/l10n.dart';
 import 'package:yt_to_todo/logic/helper.dart';
 
 import '../../../data/databases.dart';
@@ -55,7 +56,7 @@ class _AllDaysRoadmapState extends State<AllDaysRoadmap> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('The Playlist Roadmap'),
+        title:  Text('${S.of(context).all_days_roadmap}'),
       ),
       body: ListView.builder(
         itemCount: daysAndVideos.length,
@@ -222,7 +223,7 @@ class VideoCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      "Duration: 10 mins", // Example of adding a duration dynamically
+                      "${S.of(context).duration}: 10 mins", // Example of adding a duration dynamically
                       style: TextStyle(
                         fontSize: 14,
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
