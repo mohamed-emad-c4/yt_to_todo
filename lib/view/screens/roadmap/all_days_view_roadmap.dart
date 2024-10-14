@@ -111,7 +111,7 @@ class DaySection extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surfaceContainerHighest,
+              color: Colors.blueGrey[100],
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
@@ -177,7 +177,7 @@ class VideoCard extends StatelessWidget {
         // Implement your video tap functionality here
       },
       child: Card(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+        color: Colors.grey[300],
         margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
         elevation: 4,
         shape: RoundedRectangleBorder(

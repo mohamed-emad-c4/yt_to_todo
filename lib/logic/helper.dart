@@ -198,7 +198,7 @@ class HelperFunction {
   Future<List<String?>> getPlaylistIfoFromDB(String playlistId) async {
     List<Map<String, dynamic>> allInfoPlaylist =
         await DatabaseHelper().getPlaylistById(playlistId);
-    log("allInfoPlaylist :: ${allInfoPlaylist.toString()}");
+    log("allInfoPlaylist :: ${allInfoPlaylist[0]['playlist_real_name']}");
 
     return [];
   }

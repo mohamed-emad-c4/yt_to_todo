@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/logic/helper.dart';
-import 'package:yt_to_todo/logic/ai_response/ai.dart';
 import '../../../logic/cubit/update_home_cubit.dart';
 
 class PlaylistInputScreen extends StatefulWidget {
@@ -138,7 +137,7 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
         onPressed: () async {
            log("start");
     List<String?> allInfoPlaylist=    await  HelperFunction()
-              .getPlaylistIfoFromDB("PLT5kbFRZy7AF99D1LovkbAit6TYzqOOMV");
+              .getPlaylistIfoFromDB("PLCInYL3l2AajYlZGzU_LVrHdoouf8W6ZN");
 
           log("end");
         },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
@@ -38,7 +39,7 @@ class matrial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'YT to Todo',
       theme: ThemeData(

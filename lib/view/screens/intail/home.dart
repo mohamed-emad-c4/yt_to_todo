@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/view/screens/intail/addPlayList.dart';
+import 'package:yt_to_todo/view/screens/roadmap/all_days_view_roadmap.dart';
 
 import '../../../data/databases.dart';
 import '../../VideoPreviewScreen.dart';
@@ -68,7 +70,25 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               final playlist = snapshot.data![index];
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(
+        Get.bottomSheet(
+          Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 20),
+                  ListTile(
+                    leading: const Icon(Icons.playlist_play),
+                    title: Text("View Playlist"),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => VideoPreviewScreen(
@@ -76,7 +96,35 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                       ),
                     ),
                   );
-                },
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.directions_run),
+                    title: Text("View Playlist Roadmap"),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AllDaysRoadmap(),
+                        ),
+                      );
+                     
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                ],
+              )),
+          enableDrag: true,
+          isScrollControlled: true,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
+        );
+      },
                 child: Card(
                   margin: const EdgeInsets.symmetric(
                       horizontal: 16.0, vertical: 8.0),
