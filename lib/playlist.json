@@ -1,333 +1,84 @@
+[
+  {
+    "day": 1,
+    "videos": [
+      {
+        "title": "تعلم HTML من الصفر: كورس تعلم تطوير وتصميم المواقع وبرمجة صفحات الويب بالعربي",
+        "duration": "5:52",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Introduction to HTML and the course overview"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: تهيئة بيئة العمل وأدوات تساعدنا على كتابة الكود",
+        "duration": "7:25",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Setting up the development environment and essential tools"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: الهيكل الاساسي لصفحات الويب",
+        "duration": "7:12",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Understanding the basic structure of HTML pages"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: استخدام الادوات في تطوير صفحات الويب",
+        "duration": "6:50",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Exploring the use of tools in HTML development"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: ما هو الـ Head tag وأهمية الـ Meta data",
+        "duration": "4:10",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Understanding the Head tag and the significance of Meta data"
+      },
+      {
+        "title": "تعلم HTML من الصفر للاحتراف: ما هو الـ Open Graph Protocol",
+        "duration": "5:09",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Exploring the Open Graph Protocol"
+      },
+      {
+        "title": "تعلم HTML من الصفر للاحتراف: ماذا نتعلم في الوحدة الجديدة",
+        "duration": "2:30",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Introduction to the new unit and learning objectives"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: الـ heading وبداية مشروع الـ portfolio",
+        "duration": "5:40",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Exploring headings and starting the Portfolio project"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: كتابة فقرة نصية باستخدام HTML",
+        "duration": "10:01",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Writing a paragraph of text using HTML"
+      },
+      {
+        "title": "تعلم HTML من الصفر للإحتراف: تنسيق النصوص باستخدام الـ HTML",
+        "duration": "10:10",
+        "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
+        "task": "Formatting text using HTML"
+      }
+    ],
+    "total_duration": "1:03:07"
+  }
+]
 
-      [
-        {
-          "day": 1,
-          "videos": [
-            {
-              "title": "تعلم HTML من الصفر: كورس تعلم تطوير وتصميم المواقع وبرمجة صفحات الويب بالعربي",
-              "duration": "5:52",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Introduction to HTML and the course overview"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: تهيئة بيئة العمل وأدوات تساعدنا على كتابة الكود",
-              "duration": "7:25",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Setting up the development environment and essential tools"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: الهيكل الاساسي لصفحات الويب",
-              "duration": "7:12",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Understanding the basic structure of HTML pages"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: استخدام الادوات في تطوير صفحات الويب",
-              "duration": "6:50",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Exploring the use of tools in HTML development"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: ما هو الـ Head tag وأهمية الـ Meta data",
-              "duration": "4:10",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Understanding the Head tag and the significance of Meta data"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: ما هو الـ Open Graph Protocol",
-              "duration": "5:09",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Exploring the Open Graph Protocol"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: ماذا نتعلم في الوحدة الجديدة",
-              "duration": "2:30",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Introduction to the new unit and learning objectives"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: الـ heading وبداية مشروع الـ portfolio",
-              "duration": "5:40",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Exploring headings and starting the Portfolio project"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: كتابة فقرة نصية باستخدام HTML",
-              "duration": "10:01",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Writing a paragraph of text using HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: تنسيق النصوص باستخدام الـ HTML",
-              "duration": "10:10",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Formatting text using HTML"
-            }
-          ],
-          "total_duration": "1:03:07"
-        },
-        {
-          "day": 2,
-          "videos": [
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: حل تكليف تنسيق الـ Portfolio",
-              "duration": "10:39",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Solving the Portfolio formatting task"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: استخدام الاقتباسات والمصطلحات في HTML",
-              "duration": "9:18",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Using quotations and terms in HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: كتابة code برمجي داخل صفحة الـ HTML",
-              "duration": "11:41",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Writing code within an HTML page"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: استخدام عنصر الـ a لإنشاء الروابط",
-              "duration": "12:26",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Creating links using the 'a' element"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: روابط وسائل التواصل في مشروع الـ Portfolio",
-              "duration": "7:57",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Adding social media links to the Portfolio project"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: ماذا سنتعلم في الواحده الثالثة",
-              "duration": "1:47",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Introduction to the third unit and learning objectives"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: أستخدام القوائم \"Lists\"",
-              "duration": "6:15",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Using lists in HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: كيفية استخدام الصور في HTML",
-              "duration": "17:50",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Using images in HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: انواع الصور في HTML",
-              "duration": "13:11",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Different types of images in HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: ما هي الأيقونة المفضلة Favicon",
-              "duration": "3:22",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Understanding the Favicon"
-            }
-          ],
-          "total_duration": "1:48:40"
-        },
-        {
-          "day": 3,
-          "videos": [
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: اضافة فيديو في صفحة الويب باستخدام HTML",
-              "duration": "6:51",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Adding videos to an HTML page"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: استخدام الـ Source Tag لإضافة فيديو",
-              "duration": "5:19",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Using the Source tag for adding videos"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: إضافة ملف صوتي في صفحة الويب باستخدام HTML",
-              "duration": "4:21",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Adding audio files to an HTML page"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: أستخدام iframe tag في الـ HTML",
-              "duration": "8:17",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Utilizing the iframe tag in HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: تنظيم ملفات المشروع وتكليف الوحدة",
-              "duration": "5:07",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Organizing project files and unit assignments"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: مشروع بناء صفحة الهبوط - Landing page",
-              "duration": "14:20",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Building a Landing Page project"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: تكملة مشروع بناء صفحة الهبوط - Landing page",
-              "duration": "8:24",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Continuing the Landing Page project"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: تكملة مشروع بناء صفحة الهبوط -2- Landing page",
-              "duration": "11:18",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Continuing the Landing Page project - Part 2"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف آخر خطوة بمشروع بناء صفحة الهبوط - Landing page",
-              "duration": "9:37",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Final steps of the Landing Page project"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: هنتعلم إيه في وحدة الـ Form في HTML5؟",
-              "duration": "1:36",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Introduction to the Form unit in HTML5"
-            }
-          ],
-          "total_duration": "1:33:48"
-        },
-        {
-          "day": 4,
-          "videos": [
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: مقدمة عن حقول إدخال النص - input element",
-              "duration": "5:54",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Introduction to text input fields - input element"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: حقول إدخال النصوص في HTML",
-              "duration": "8:10",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Text input fields in HTML"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: استخدام أنواع حقول إدخال مختلفة",
-              "duration": "5:45",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Using different types of input fields"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: كيفية إرسال البيانات لقاعدة البيانات",
-              "duration": "5:05",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Sending data to a database"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: التأكد من صحة البيانات",
-              "duration": "9:04",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Data validation"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: بناء form لإرسال وسائل التواصل",
-              "duration": "7:02",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Creating a form for sending social media information"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: إرسال حقول الإدخال والتعرف علي name, action",
-              "duration": "8:58",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Sending input fields and understanding 'name' and 'action'"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: أنواع حقول إدخال مختلفة",
-              "duration": "6:34",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Different types of input fields"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: إنشاء نموذج للتقدم إلى وظيفة",
-              "duration": "8:14",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Creating an application form"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: تكملة انشاء ال Application form",
-              "duration": "11:42",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Completing the application form"
-            }
-          ],
-          "total_duration": "1:33:47"
-        },
-        {
-          "day": 5,
-          "videos": [
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: إرسال حقول الإدخال والتعرف علي name, action",
-              "duration": "8:58",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Sending input fields and understanding 'name' and 'action'"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: أنواع حقول إدخال مختلفة",
-              "duration": "6:34",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Different types of input fields"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: إنشاء نموذج للتقدم إلى وظيفة",
-              "duration": "8:14",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Creating an application form"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: تكملة انشاء ال Application form",
-              "duration": "11:42",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Completing the application form"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: إرسال حقول الإدخال والتعرف علي name, action",
-              "duration": "8:58",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Sending input fields and understanding 'name' and 'action'"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: أنواع حقول إدخال مختلفة",
-              "duration": "6:34",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Different types of input fields"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: إنشاء نموذج للتقدم إلى وظيفة",
-              "duration": "8:14",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Creating an application form"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: تكملة انشاء ال Application form",
-              "duration": "11:42",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Completing the application form"
-            },
-            {
-              "title": "تعلم HTML من الصفر للإحتراف: إرسال حقول الإدخال والتعرف علي name, action",
-              "duration": "8:58",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Sending input fields and understanding 'name' and 'action'"
-            },
-            {
-              "title": "تعلم HTML من الصفر للاحتراف: أنواع حقول إدخال مختلفة",
-              "duration": "6:34",
-              "url": "https://www.youtube.com/watch?v=5fZIgq5nR6s",
-              "task": "Different types of input fields"
-            }
-          ],
-          "total_duration": "1:10:54"
-        }
-      ]
+[
+  {
+    "id": 3,
+    "playlist_id": "PLT5kbFRZy7AF99D1LovkbAit6TYzqOOMV",
+    "playlist_real_name": "Flutter",
+    "playlist_notes": "",
+    "playlist_url": null,
+    "playlist_image": "https://i.ytimg.com/vi/cYeQCGr6F7c/hqdefault.jpg",
+    "playlist_total_time": "02:43:21",
+    "playlist_total_videos": 5,
+    "playlist_start_at": 17,
+    "playlist_end_at": 22,
+    "playlist_status": 0
+  }
+]

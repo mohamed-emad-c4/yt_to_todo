@@ -1,4 +1,5 @@
 import 'dart:developer' as dev;
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/logic/helper.dart';
@@ -132,6 +133,16 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
             ],
           ),
         ),
+      ),
+      floatingActionButton:  FloatingActionButton(
+        onPressed: () async {
+           log("start");
+    List<String?> allInfoPlaylist=    await  HelperFunction()
+              .getPlaylistIfoFromDB("PLT5kbFRZy7AF99D1LovkbAit6TYzqOOMV");
+
+          log("end");
+        },
+        child: const Icon(Icons.clear),
       ),
     );
   }

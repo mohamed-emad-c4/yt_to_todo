@@ -45,7 +45,7 @@ class HelperFunction {
           final videoUrl = 'https://www.youtube.com/watch?v=$videoId';
 
           final duration = await getDurationVideo(videoId);
-durationVideo = duration;
+          durationVideo = duration;
           final videoInfo = VideoInfoModel(
             title: title,
             url: videoUrl,
@@ -85,7 +85,7 @@ durationVideo = duration;
         "playlist_end_at": end,
         "playlist_status": 0,
       };
-    await SharePrefrenceClass().saveValueint(value: end, key: "start_at");
+      await SharePrefrenceClass().saveValueint(value: end, key: "start_at");
       await DatabaseHelper().insertPlaylist(insertPlaylist);
       log(" map is :: $insertPlaylist");
       log('Total videos fetched: ${videoDetailsList.length}');
@@ -111,7 +111,7 @@ durationVideo = duration;
           retun.add(data['items'][0]['snippet']['title']);
           retun.add(data['items'][0]['snippet']['description']);
           retun.add(data['items'][0]['snippet']['thumbnails']['high']['url']);
-          
+
           // استرجاع عنوان قائمة التشغيل
           return retun;
         } else {
@@ -194,11 +194,12 @@ durationVideo = duration;
 
     return '${totalHours.toString().padLeft(2, '0')}:${totalMinutes.toString().padLeft(2, '0')}:${totalSeconds.toString().padLeft(2, '0')}';
   }
- 
- Future<String> getPlaylistIfoFromDB ( String playlistId)async{
-  List<Map<String, dynamic>> allInfoPlaylist = await DatabaseHelper().getPlaylistById(playlistId);
-  log("allInfoPlaylist :: $allInfoPlaylist");
 
-  return "";
- }
+  Future<List<String?>> getPlaylistIfoFromDB(String playlistId) async {
+    List<Map<String, dynamic>> allInfoPlaylist =
+        await DatabaseHelper().getPlaylistById(playlistId);
+    log("allInfoPlaylist :: ${allInfoPlaylist.toString()}");
+
+    return [];
+  }
 }

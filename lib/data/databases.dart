@@ -34,8 +34,8 @@ class DatabaseHelper {
         playlist_url TEXT,
         playlist_total_time TEXT,
         playlist_total_videos TEXT,
-        playlist_image TEXT,
         playlist_start_at INTEGER,
+        playlist_image TEXT,
         playlist_end_at INTEGER,
         playlist_status INTEGER
       )
@@ -104,6 +104,7 @@ class DatabaseHelper {
     Database db = await database;
     return await db.query('videos_info', where: 'video_playlist_id = ?', whereArgs: [playlistId]);
   }
+
 
   Future<int> updateVideo(Map<String, dynamic> video) async {
     Database db = await database;

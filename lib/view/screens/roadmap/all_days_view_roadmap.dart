@@ -1,4 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:yt_to_todo/logic/helper.dart';
+
+import '../../../data/databases.dart';
 
 class AllDaysRoadmap extends StatefulWidget {
   const AllDaysRoadmap({super.key});
@@ -64,6 +69,17 @@ class _AllDaysRoadmapState extends State<AllDaysRoadmap> {
             onTap: () => toggleDay(index),
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          log("start");
+        await  HelperFunction()
+              .getPlaylistIfoFromDB("PLT5kbFRZy7AF99D1LovkbAit6TYzqOOMV");
+              List<Map<String, dynamic>> getVideosByPlaylistId = await DatabaseHelper().getVideosByPlaylistId("PLT5kbFRZy7AF99D1LovkbAit6TYzqOOMV");
+              log("getVideosByPlaylistId :: ${getVideosByPlaylistId.length}");
+          log("end");
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
