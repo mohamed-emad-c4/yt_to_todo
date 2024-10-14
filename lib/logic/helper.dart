@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:yt_to_todo/data/databases.dart';
 
 import 'package:yt_to_todo/logic/globalVaribul.dart';
+import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/model/playList.dart';
 
 class HelperFunction {
@@ -200,12 +201,5 @@ class HelperFunction {
     log("allInfoPlaylist :: ${allInfoPlaylist[0]['playlist_real_name']}");
 
     return [];
-  }
-    Future< List<Map<String, dynamic>> > getALLVideosINPlaylistIfoFromDB(String playlistId) async {
-    List<Map<String, dynamic>> allInfoPlaylist =
-        await DatabaseHelper().getVideosByPlaylistId(playlistId);
-    // log("allInfoPlaylist :: ${allInfoPlaylist.length.toString()}");
-
-    return allInfoPlaylist;
   }
 }

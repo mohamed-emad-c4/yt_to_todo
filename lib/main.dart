@@ -21,20 +21,11 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({super.key, required this.isIntialized});
   bool isIntialized;
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => UpdateHomeCubit(),
-      child: BlocListener<UpdateHomeCubit, UpdateHomeState>(
-        listener: (context, state) {
-          if (state is UpdateHomeLanguageChanged) {
-            // تغيير اللغة في GetMaterialApp
-            Get.updateLocale(state.locale);
-          }
-        },
-        child: matrial(isIntialized: isIntialized),
-      ),
+      child: matrial(isIntialized: isIntialized),
     );
   }
 }
@@ -49,20 +40,15 @@ class matrial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = context.select((UpdateHomeCubit cubit) => cubit.state is UpdateHomeLanguageChanged
-        ? (cubit.state as UpdateHomeLanguageChanged).locale
-        : const Locale('ar')); // اللغة الافتراضية
-
-    return GetMaterialApp(
-      localizationsDelegates: [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
+    return GetMaterialApp(localizationsDelegates: [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
-      locale: locale,
+      locale: const Locale('ar'),
       title: 'YT to Todo',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Color(0xffe5e5e5)),
@@ -83,7 +69,9 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: isIntialized ? const Home() : const PageViewInitial(),
+      home:
+     
+      isIntialized ? const Home() : const PageViewInitial(),
     );
   }
 }

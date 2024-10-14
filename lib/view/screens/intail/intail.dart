@@ -53,8 +53,8 @@ class InitialSettingsScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Navigate to the main screen
-                  SharePreferenceClass()
-                      .saveValueBool(value: true, key: "isInitialized");
+                  SharePrefrenceClass()
+                      .saveValuebool(value: true, key: "isInitialized");
 
                   Navigator.pushReplacement(
                       context,
