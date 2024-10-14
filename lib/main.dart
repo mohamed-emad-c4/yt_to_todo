@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/logic/cubit/update_home_cubit.dart';
 import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
-import 'package:yt_to_todo/view/screens/intail/home.dart';
-import 'package:yt_to_todo/view/screens/intail/intail.dart';
+import 'view/screens/roadmap/all_days_view_roadmap.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,7 +58,8 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: isIntialized ? const Home() : const PageViewInitial(),
+      home: AllDaysRoadmap(),
+      // isIntialized ? const Home() : const PageViewInitial(),
     );
   }
 }
