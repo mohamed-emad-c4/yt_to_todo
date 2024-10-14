@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'dart:developer' as dev;
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yt_to_todo/generated/l10n.dart';
 import 'package:yt_to_todo/logic/helper.dart';
+import '../../../logic/ai_response/ai.dart';
 import '../../../logic/cubit/update_home_cubit.dart';
 
 class PlaylistInputScreen extends StatefulWidget {
@@ -28,35 +30,35 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
   }
 
   Future<void> _insertPlaylist() async {
-  if (_formKey.currentState!.validate()) {
-    setState(() {
-      _isLoading = true;
-    });
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        _isLoading = true;
+      });
 
-    try {
-      String url = _urlController.text;
-      String notes = _notesController.text;
-      playlistId = extractPlaylistId(url);
+      try {
+        String url = _urlController.text;
+        String notes = _notesController.text;
+        playlistId = extractPlaylistId(url);
 
       if (playlistId.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
-           SnackBar(content: Text('${S.of(context).invalid_playlist_URL}')),
+          const SnackBar(content: Text('Invalid playlist URL')),
         );
         return;
       }
 
       await HelperFunction().getAllVideosInPlaylist(playlistId);
-      dev.log('${S.of(context).url}: $url');
-      dev.log('${S.of(context).notes}: $notes');
+      dev.log('URL: $url');
+      dev.log('Notes: $notes');
 
-      // Notify the home page about the update using Cubit
-      BlocProvider.of<UpdateHomeCubit>(context).updateHome();
+        // Notify the home page about the update using Cubit
+        BlocProvider.of<UpdateHomeCubit>(context).updateHome();
 
       // Return true to notify the previous screen to reload data
       Navigator.pop(context, true);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('${S.of(context).error}: $e')),
+        SnackBar(content: Text('Error: $e')),
       );
     } finally {
       setState(() {
@@ -134,13 +136,9 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
           ),
         ),
       ),
-      floatingActionButton:  FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () async {
-           log("start");
-    List<String?> allInfoPlaylist=    await  HelperFunction()
-              .getPlaylistIfoFromDB("PLCInYL3l2AajYlZGzU_LVrHdoouf8W6ZN");
-
-          log("end");
+         GiminiAi().aiResponse("2","PLCaS22Sjc8YR32XmudgmVqs49t-eKKr9t");
         },
         child: const Icon(Icons.clear),
       ),
