@@ -194,4 +194,11 @@ durationVideo = duration;
 
     return '${totalHours.toString().padLeft(2, '0')}:${totalMinutes.toString().padLeft(2, '0')}:${totalSeconds.toString().padLeft(2, '0')}';
   }
+ 
+ Future<String> getPlaylistIfoFromDB ( String playlistId)async{
+  List<Map<String, dynamic>> allInfoPlaylist = await DatabaseHelper().getPlaylistById(playlistId);
+  log("allInfoPlaylist :: $allInfoPlaylist");
+
+  return "";
+ }
 }

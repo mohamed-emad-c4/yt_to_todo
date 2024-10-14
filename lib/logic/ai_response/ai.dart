@@ -18,6 +18,12 @@ class GiminiAi {
 // Use the data to populate your Flutter UI
   );
 
+String totalDuration = 'N/A';
+String totalVideos = 'N/A';
+String videoDuration = 'N/A';
+String videoTitle = 'N/A';
+String videoUrl = 'N/A';
+String timeOfDay = 'N/A';
   const prompt ="""
 
 I am a mobile app developer working on a project using the Gemini API. you are an expert with 20 years of experience in creating educational roadmaps for online teaching.

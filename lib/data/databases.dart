@@ -32,9 +32,9 @@ class DatabaseHelper {
         playlist_real_name TEXT,
         playlist_notes TEXT,
         playlist_url TEXT,
-        playlist_image TEXT,
         playlist_total_time TEXT,
         playlist_total_videos TEXT,
+        playlist_image TEXT,
         playlist_start_at INTEGER,
         playlist_end_at INTEGER,
         playlist_status INTEGER

@@ -58,7 +58,8 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: AllDaysRoadmap(),
+      home:
+       AllDaysRoadmap(),
       // isIntialized ? const Home() : const PageViewInitial(),
     );
   }

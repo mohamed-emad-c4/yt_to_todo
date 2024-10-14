@@ -38,6 +38,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
   late Future<List<Map<String, dynamic>>> playlists;
 
   @override
+
   void initState() {
     super.initState();
     playlists = DatabaseHelper().getPlaylists();
