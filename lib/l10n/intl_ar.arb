@@ -2,8 +2,8 @@
     "all_Playlists": "جميع قوائم التشغيل",
     "all_Videos": "جميع الفيديوهات",
     "add_Playlist": "إضافة قائمة تشغيل",
-    "total_Time": "إجمالي الوقت",
-    "total_Videos": "إجمالي الفيديوهات",
+    "total_Time": " الوقت",
+    "total_Videos": " الفيديوهات",
     "insert": "إدراج",
     "delete": "حذف",
     "view_Playlist": "عرض قائمة التشغيل",
@@ -27,6 +27,6 @@
     "all_days_roadmap": "خريطة كل الايام",
     "loading": "تحميل...",
     "no_videos_found": "لم يتم العثور على فيديوهات",
-    "could_not_launch": "لا يمكن تشغيل"
-    
+    "could_not_launch": "لا يمكن تشغيل",
+    "edit_note": "تعديل البيانات"
 }

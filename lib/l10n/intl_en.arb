@@ -27,8 +27,6 @@
     "all_days_roadmap": "All Days Roadmap",
     "loading": "Loading...",
     "no_videos_found": "No videos found",
-    "could_not_launch": "Could not launch"
-
-
-
+    "could_not_launch": "Could not launch",
+    "edit_note": "Edit Note"
 }

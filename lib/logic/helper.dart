@@ -202,4 +202,10 @@ class HelperFunction {
 
     return [];
   }
+    Future< List<Map<String, dynamic>> > getALLVideosINPlaylistIfoFromDB(String playlistId) async {
+    List<Map<String, dynamic>> allInfoPlaylist =
+        await DatabaseHelper().getVideosByPlaylistId(playlistId);
+    // log("allInfoPlaylist :: ${allInfoPlaylist.length.toString()}");
+    return allInfoPlaylist;
+  }
 }
