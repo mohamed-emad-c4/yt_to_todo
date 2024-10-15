@@ -51,7 +51,6 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).all_Playlists),
-        backgroundColor: Colors.deepPurpleAccent,
         elevation: 0,
         actions: [
           IconButton(
@@ -62,13 +61,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
           ),
         ],
         flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.purple, Colors.deepPurpleAccent],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
+          decoration: const BoxDecoration(),
         ),
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
@@ -207,18 +200,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "${S.of(context).total_Videos}: ${playlist['playlist_total_videos'] ?? 0}",
+                                "${S.of(context).total_Videos}: ${playlist['playlist_total_videos'] ?? 0}    ${S.of(context).total_Time}: ${playlist['playlist_total_time'] ?? 0}",
                                 style: const TextStyle(
                                   fontSize: 16,
-                                  color: Colors.deepPurpleAccent,
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                "${S.of(context).total_Time}: ${playlist['playlist_total_time'] ?? 0}",
-                                style: TextStyle(
-                                  color: Colors.grey[700],
-                                  fontSize: 14,
                                 ),
                               ),
                             ],
@@ -234,7 +218,6 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurpleAccent,
         onPressed: () async {
           final result = await Navigator.push(
             context,

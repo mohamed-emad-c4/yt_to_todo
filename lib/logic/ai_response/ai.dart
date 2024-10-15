@@ -14,6 +14,7 @@ class GiminiAi {
 
   Future<void> aiResponse(String timeOfDay, String playlistId) async {
     try {
+      log("started aiResponse");
       // Fetch playlist information from the database
       playlistInfo = await DatabaseHelper().getPlaylistById(playlistId);
       if (playlistInfo.isEmpty) {
@@ -30,13 +31,13 @@ class GiminiAi {
       }
 
       // Construct the list of videos with their titles and durations
-       String allVideos = "";
-          int videoIndex = 1;
-          for (var video in allInfoPlaylist) {
-            allVideos +=
-                "$videoIndex. ${video['video_tittle']}, ${video["video_duration"]} ${video["video_url"]} \n";
-            videoIndex++;
-          }
+      String allVideos = "";
+      int videoIndex = 1;
+      for (var video in allInfoPlaylist) {
+        allVideos +=
+            "$videoIndex. ${video['video_tittle']}, ${video["video_duration"]} ${video["video_url"]} \n";
+        videoIndex++;
+      }
 
       // Initialize the generative model
       final model = GenerativeModel(
@@ -77,8 +78,52 @@ $allVideos
 3. Provide a *summary* of tasks or goals for each day based on the video content.  
 4. Give me the response in JSON format to put it directly into the database.
 5. Specify which day the video belongs to.
-6. send me back the url of the video that i send .
+6. send me back the url of the video that i send (string format like "https://www.youtube.com/watch?v=xxxxxxxxxx").
+### Example Response: :
+[
+  
+   { day: 1,
+    videos: [
+      {
+        title: "title1",
+        duration: "duration1",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title2",
+        duration: "duration2",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title3",
+        duration: "duration3",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+    ],
+    total_duration: "total_duration"
+  },
+   { day: 2,
+    videos: [
+      {
+        title: "title3",
+        duration: "duration4",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title4",
+        duration: "duration5",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title5",
+        duration: "duration6",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
 
+    ],
+    total_duration: "total_duration"}
+  
+]
 """;
 
       // Generate content using the generative model
@@ -98,7 +143,7 @@ $allVideos
       var decodedData = jsonDecode(jsonPart);
 
       // Log the decoded data for debugging
-      log(decodedData[0]["day"].toString());
+      log(decodedData.toString());
       // log(prompt);
     } catch (e) {
       log("Error in aiResponse: $e");

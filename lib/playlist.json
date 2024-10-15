@@ -93,7 +93,6 @@ allInfoPlaylist [
       video_days: 0,
       video_playlist_id: "PLT5kbFRZy7AF99D1LovkbAit6TYzqOOMV"
   },
- 
 ]
 
       [
@@ -189,4 +188,48 @@ allInfoPlaylist [
       ], total_duration: 00: 24: 34
     }
   ]
+]
+[
+  
+   { day: 1,
+    videos: [
+      {
+        title: "title1",
+        duration: "duration1",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title2",
+        duration: "duration2",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title3",
+        duration: "duration3",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+    ],
+    total_duration: "total_duration"
+  },
+   { day: 2,
+    videos: [
+      {
+        title: "title3",
+        duration: "duration4",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title4",
+        duration: "duration5",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+      {
+        title: "title5",
+        duration: "duration6",
+        url: "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+
+    ],
+    total_duration: "total_duration"}
+  
 ]
