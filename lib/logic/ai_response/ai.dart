@@ -22,19 +22,21 @@ class GiminiAi {
       }
 
       // Fetch all videos in the playlist from the database
-      allInfoPlaylist = await HelperFunction().getALLVideosINPlaylistIfoFromDB(playlistId);
+      allInfoPlaylist =
+          await HelperFunction().getALLVideosINPlaylistIfoFromDB(playlistId);
       if (allInfoPlaylist.isEmpty) {
         log("No videos found in the playlist.");
         return;
       }
 
       // Construct the list of videos with their titles and durations
-      String allVideos = "";
-      int videoIndex = 1;
-      for (var video in allInfoPlaylist) {
-        allVideos += "$videoIndex. ${video['video_tittle']}, ${video["video_duration"]} \n";
-        videoIndex++;
-      }
+       String allVideos = "";
+          int videoIndex = 1;
+          for (var video in allInfoPlaylist) {
+            allVideos +=
+                "$videoIndex. ${video['video_tittle']}, ${video["video_duration"]} ${video["video_url"]} \n";
+            videoIndex++;
+          }
 
       // Initialize the generative model
       final model = GenerativeModel(
@@ -74,8 +76,9 @@ $allVideos
 2. Each day’s total should be approximately $timeOfDay hours.  
 3. Provide a *summary* of tasks or goals for each day based on the video content.  
 4. Give me the response in JSON format to put it directly into the database.
-5. Include the URL of the video.
-6. Specify which day the video belongs to.
+5. Specify which day the video belongs to.
+6. send me back the url of the video that i send .
+
 """;
 
       // Generate content using the generative model
@@ -95,9 +98,8 @@ $allVideos
       var decodedData = jsonDecode(jsonPart);
 
       // Log the decoded data for debugging
-      log(decodedData[2]["day"].toString());
-      log(prompt);
-
+      log(decodedData[0]["day"].toString());
+      // log(prompt);
     } catch (e) {
       log("Error in aiResponse: $e");
     }

@@ -18,7 +18,7 @@ class Setting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.of(context).Settings),
+        title: Text(S.of(context).settings),
         centerTitle: true,
       ),
       body: SettingsListState(isDarkMode: isDarkMode),
@@ -86,7 +86,7 @@ class _SettingsListStateState extends State<SettingsListState> {
   ListTile _buildLanguageTile(BuildContext context) {
     return ListTile(
       leading: const Icon(Icons.language),
-      title: Text(S.of(context).Language),
+      title: Text(S.of(context).settings),
       trailing: DropdownButton<String>(
         value: selectedLanguage,
         onChanged: (String? newValue) {

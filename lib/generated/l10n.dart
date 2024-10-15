@@ -350,156 +350,6 @@ class S {
     );
   }
 
-  /// `Recorder`
-  String get Recorder {
-    return Intl.message(
-      'Recorder',
-      name: 'Recorder',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Deleted`
-  String get Deleted {
-    return Intl.message(
-      'Deleted',
-      name: 'Deleted',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Premanent Delete`
-  String get Deletedf {
-    return Intl.message(
-      'Premanent Delete',
-      name: 'Deletedf',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Archived`
-  String get Archived {
-    return Intl.message(
-      'Archived',
-      name: 'Archived',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Favorites`
-  String get Favorites {
-    return Intl.message(
-      'Favorites',
-      name: 'Favorites',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Settings`
-  String get Settings {
-    return Intl.message(
-      'Settings',
-      name: 'Settings',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add Note`
-  String get AddNote {
-    return Intl.message(
-      'Add Note',
-      name: 'AddNote',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Title`
-  String get LableTittleAdd {
-    return Intl.message(
-      'Title',
-      name: 'LableTittleAdd',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Content`
-  String get LableContentAdd {
-    return Intl.message(
-      'Content',
-      name: 'LableContentAdd',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Edit Note`
-  String get EditNote {
-    return Intl.message(
-      'Edit Note',
-      name: 'EditNote',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Done`
-  String get Done {
-    return Intl.message(
-      'Done',
-      name: 'Done',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Added to archive`
-  String get AddedToArchive {
-    return Intl.message(
-      'Added to archive',
-      name: 'AddedToArchive',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Error`
-  String get Error {
-    return Intl.message(
-      'Error',
-      name: 'Error',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Failed to add note`
-  String get FailedToAddNote {
-    return Intl.message(
-      'Failed to add note',
-      name: 'FailedToAddNote',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Failed to delete note`
-  String get FailedToDeleteNote {
-    return Intl.message(
-      'Failed to delete note',
-      name: 'FailedToDeleteNote',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `About Us`
   String get AboutUs {
     return Intl.message(
@@ -800,346 +650,6 @@ class S {
     );
   }
 
-  /// `Favorite`
-  String get Favorite {
-    return Intl.message(
-      'Favorite',
-      name: 'Favorite',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Archive`
-  String get Archive {
-    return Intl.message(
-      'Archive',
-      name: 'Archive',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Save`
-  String get Save {
-    return Intl.message(
-      'Save',
-      name: 'Save',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Success`
-  String get Success {
-    return Intl.message(
-      'Success',
-      name: 'Success',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Note saved successfully`
-  String get NoteSavedSuccessfully {
-    return Intl.message(
-      'Note saved successfully',
-      name: 'NoteSavedSuccessfully',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter a title and content`
-  String get PleaseEnterTitleAndContent {
-    return Intl.message(
-      'Please enter a title and content',
-      name: 'PleaseEnterTitleAndContent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Dark Mode`
-  String get DarkMode {
-    return Intl.message(
-      'Dark Mode',
-      name: 'DarkMode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Language`
-  String get Language {
-    return Intl.message(
-      'Language',
-      name: 'Language',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enable Notifications`
-  String get EnableNotifications {
-    return Intl.message(
-      'Enable Notifications',
-      name: 'EnableNotifications',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Hidden Notes 🤫`
-  String get HiddenNotes {
-    return Intl.message(
-      'Hidden Notes 🤫',
-      name: 'HiddenNotes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No hidden notes found.`
-  String get NoHiddenNotesFound {
-    return Intl.message(
-      'No hidden notes found.',
-      name: 'NoHiddenNotesFound',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Note added successfully!`
-  String get NoteAddedSuccessfully {
-    return Intl.message(
-      'Note added successfully!',
-      name: 'NoteAddedSuccessfully',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Favorite Notes`
-  String get FavoriteNotes {
-    return Intl.message(
-      'Favorite Notes',
-      name: 'FavoriteNotes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No Favorite Notes Available`
-  String get NoFavoriteNotesAvailable {
-    return Intl.message(
-      'No Favorite Notes Available',
-      name: 'NoFavoriteNotesAvailable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Dislike`
-  String get Dislike {
-    return Intl.message(
-      'Dislike',
-      name: 'Dislike',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No notes available`
-  String get NoNotesAvailable {
-    return Intl.message(
-      'No notes available',
-      name: 'NoNotesAvailable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter PIN`
-  String get EnterPIN {
-    return Intl.message(
-      'Enter PIN',
-      name: 'EnterPIN',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter your PIN`
-  String get EnterYourPIN {
-    return Intl.message(
-      'Enter your PIN',
-      name: 'EnterYourPIN',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Incorrect PIN`
-  String get IncorrectPIN {
-    return Intl.message(
-      'Incorrect PIN',
-      name: 'IncorrectPIN',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter`
-  String get Enter {
-    return Intl.message(
-      'Enter',
-      name: 'Enter',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Deleted Notes`
-  String get DeletedNotes {
-    return Intl.message(
-      'Deleted Notes',
-      name: 'DeletedNotes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No Deleted Notes Available`
-  String get NoDeletedNotesAvailable {
-    return Intl.message(
-      'No Deleted Notes Available',
-      name: 'NoDeletedNotesAvailable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Premanent Delete`
-  String get PremanentDelete {
-    return Intl.message(
-      'Premanent Delete',
-      name: 'PremanentDelete',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Restore`
-  String get Restore {
-    return Intl.message(
-      'Restore',
-      name: 'Restore',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Create PIN`
-  String get CreatePIN {
-    return Intl.message(
-      'Create PIN',
-      name: 'CreatePIN',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter 12-digit PIN`
-  String get Enter12DigitPIN {
-    return Intl.message(
-      'Enter 12-digit PIN',
-      name: 'Enter12DigitPIN',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `PIN Saved`
-  String get PINSaved {
-    return Intl.message(
-      'PIN Saved',
-      name: 'PINSaved',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `PIN must be 12 digits`
-  String get PINMustBe12Digits {
-    return Intl.message(
-      'PIN must be 12 digits',
-      name: 'PINMustBe12Digits',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Archived Notes`
-  String get ArchivedNotes {
-    return Intl.message(
-      'Archived Notes',
-      name: 'ArchivedNotes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No Archived Notes Available`
-  String get NoArchivedNotesAvailable {
-    return Intl.message(
-      'No Archived Notes Available',
-      name: 'NoArchivedNotesAvailable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Added to favorites`
-  String get AddedToFavorites {
-    return Intl.message(
-      'Added to favorites',
-      name: 'AddedToFavorites',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Added to deleted`
-  String get AddedToDeleted {
-    return Intl.message(
-      'Added to deleted',
-      name: 'AddedToDeleted',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Unarchived`
-  String get Unarchived {
-    return Intl.message(
-      'Unarchived',
-      name: 'Unarchived',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Deleted from archive`
-  String get DeletedFromArchive {
-    return Intl.message(
-      'Deleted from archive',
-      name: 'DeletedFromArchive',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Close`
   String get Close {
     return Intl.message(
@@ -1365,6 +875,226 @@ class S {
     return Intl.message(
       'A: Yes, the app works with any public YouTube playlist. Just make sure to enter the correct link for the playlist.',
       name: 'a1_q6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Publishing Date : October 1, 2024`
+  String get effective_date {
+    return Intl.message(
+      'Publishing Date : October 1, 2024',
+      name: 'effective_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We take your privacy seriously. By using our app, we are committed to protecting your privacy. This privacy policy outlines how we collect, use, and safeguard your information when you use our app [App Name].`
+  String get we_take_privacy_seriously {
+    return Intl.message(
+      'We take your privacy seriously. By using our app, we are committed to protecting your privacy. This privacy policy outlines how we collect, use, and safeguard your information when you use our app [App Name].',
+      name: 'we_take_privacy_seriously',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Information We Collect`
+  String get information_we_collect {
+    return Intl.message(
+      'Information We Collect',
+      name: 'information_we_collect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Information`
+  String get personal_information {
+    return Intl.message(
+      'Personal Information',
+      name: 'personal_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Personal Information: When you use our app, we may collect personal information such as your name, email address, and any other information you provide voluntarily.`
+  String get personal_information1 {
+    return Intl.message(
+      '1. Personal Information: When you use our app, we may collect personal information such as your name, email address, and any other information you provide voluntarily.',
+      name: 'personal_information1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2. Usage Data: We may collect information about how you access and use the app, including device information, IP address, browser type, and pages you visit.`
+  String get personal_information2 {
+    return Intl.message(
+      '2. Usage Data: We may collect information about how you access and use the app, including device information, IP address, browser type, and pages you visit.',
+      name: 'personal_information2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How We Use Your Information`
+  String get how_we_use_your_information {
+    return Intl.message(
+      'How We Use Your Information',
+      name: 'how_we_use_your_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To provide and maintain our app.`
+  String get to_provide_and_maintain {
+    return Intl.message(
+      '• To provide and maintain our app.',
+      name: 'to_provide_and_maintain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To notify you about changes to our app.`
+  String get to_notify_you_about {
+    return Intl.message(
+      '• To notify you about changes to our app.',
+      name: 'to_notify_you_about',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To allow you to participate in interactive features when you choose to do so.`
+  String get to_allow_you_to_participate {
+    return Intl.message(
+      '• To allow you to participate in interactive features when you choose to do so.',
+      name: 'to_allow_you_to_participate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To provide customer support.`
+  String get to_provide_support_for {
+    return Intl.message(
+      '• To provide customer support.',
+      name: 'to_provide_support_for',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To gather analysis or valuable information so that we can improve the app.`
+  String get to_gather_analyze_data {
+    return Intl.message(
+      '• To gather analysis or valuable information so that we can improve the app.',
+      name: 'to_gather_analyze_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To monitor the usage of the app.`
+  String get to_monitor {
+    return Intl.message(
+      '• To monitor the usage of the app.',
+      name: 'to_monitor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• To detect, prevent, and address technical issues.`
+  String get to_detect {
+    return Intl.message(
+      '• To detect, prevent, and address technical issues.',
+      name: 'to_detect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data Security`
+  String get data_security {
+    return Intl.message(
+      'Data Security',
+      name: 'data_security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We take the security of your personal information seriously and implement reasonable measures to protect it. However, please remember that no method of transmission over the Internet or method of electronic storage is 100% secure.`
+  String get we_take_security {
+    return Intl.message(
+      'We take the security of your personal information seriously and implement reasonable measures to protect it. However, please remember that no method of transmission over the Internet or method of electronic storage is 100% secure.',
+      name: 'we_take_security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Third Party Services`
+  String get third_party {
+    return Intl.message(
+      'Third Party Services',
+      name: 'third_party',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our app may contain links to third-party sites or services. We have no control over, and assume no responsibility for, the content or privacy policies of any third-party sites or services.`
+  String get our_app {
+    return Intl.message(
+      'Our app may contain links to third-party sites or services. We have no control over, and assume no responsibility for, the content or privacy policies of any third-party sites or services.',
+      name: 'our_app',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changes to This Privacy Policy`
+  String get change_this {
+    return Intl.message(
+      'Changes to This Privacy Policy',
+      name: 'change_this',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes.`
+  String get we_may_update {
+    return Intl.message(
+      'We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes.',
+      name: 'we_may_update',
       desc: '',
       args: [],
     );

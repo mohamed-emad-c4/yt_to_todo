@@ -41,13 +41,14 @@ class matrial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
+    return GetMaterialApp(
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
       locale: const Locale('en'),
       title: 'YT to Todo',
@@ -70,8 +71,7 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:Setting(isDarkMode: true)
-     
+      home: Setting(isDarkMode: true)
       // isIntialized ? const Home() : const PageViewInitial(),
     );
   }
