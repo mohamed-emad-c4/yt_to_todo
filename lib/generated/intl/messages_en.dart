@@ -68,8 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterPIN": MessageLookupByLibrary.simpleMessage("Enter PIN"),
         "EnterYourPIN": MessageLookupByLibrary.simpleMessage("Enter your PIN"),
         "Error": MessageLookupByLibrary.simpleMessage("Error"),
-        "FAQ":
-            MessageLookupByLibrary.simpleMessage("Frequently Asked Questions:"),
+        "FAQ": MessageLookupByLibrary.simpleMessage("FAQ"),
         "Facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "FailedToAddNote":
             MessageLookupByLibrary.simpleMessage("Failed to add note"),
@@ -142,15 +141,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
         "YourPrivacyAndSecurity": MessageLookupByLibrary.simpleMessage(
             "Your privacy and security are important to us. We take the following measures to ensure that your data is protected:"),
+        "a1_q1": MessageLookupByLibrary.simpleMessage(
+            "A: We are continuously working to improve the app\'s performance to reduce loading times. Thank you for your understanding!"),
+        "a1_q2": MessageLookupByLibrary.simpleMessage(
+            "A: You can add a YouTube playlist by entering the playlist link into the app. The app will analyze the link and retrieve all the videos within it."),
+        "a1_q3": MessageLookupByLibrary.simpleMessage(
+            "A: After adding the playlist, the app will display all the videos contained within it, along with the duration of each video and the total duration of all videos."),
+        "a1_q4": MessageLookupByLibrary.simpleMessage(
+            "A: The roadmap is a suggested timeline for watching the videos based on the duration you specify. You can set the amount of time you want to dedicate to watching the videos, and the app will provide a plan for you to follow."),
+        "a1_q5": MessageLookupByLibrary.simpleMessage(
+            "A: Currently, you cannot modify the durations of the videos in the roadmap, but you can choose a different duration when setting up the roadmap for a different plan."),
+        "a1_q6": MessageLookupByLibrary.simpleMessage(
+            "A: Yes, the app works with any public YouTube playlist. Just make sure to enter the correct link for the playlist."),
+        "a2_q1": MessageLookupByLibrary.simpleMessage(
+            "A:Internet Connection: Ensure that your internet connection is stable and fast."),
+        "a3_q1": MessageLookupByLibrary.simpleMessage(
+            "A:Data Size: Loading large amounts of data may take longer."),
+        "a4_q1": MessageLookupByLibrary.simpleMessage(
+            "A:Server Performance: Sometimes, there may be delays from the server hosting the data."),
+        "a5_q1": MessageLookupByLibrary.simpleMessage(
+            "A:App Updates: Updates or maintenance may temporarily slow down the app."),
+        "a_q1": MessageLookupByLibrary.simpleMessage(
+            "A: There can be several factors contributing to data loading delays, including:"),
         "add_Playlist": MessageLookupByLibrary.simpleMessage("Add Playlist"),
         "all_Playlists": MessageLookupByLibrary.simpleMessage("All Playlists"),
         "all_Videos": MessageLookupByLibrary.simpleMessage("All Videos"),
         "all_days_roadmap":
             MessageLookupByLibrary.simpleMessage("All Days Roadmap"),
+        "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "could_not_launch":
             MessageLookupByLibrary.simpleMessage("Could not launch"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "duration": MessageLookupByLibrary.simpleMessage("Duration"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "enter_any_notes_about_the_playlist":
             MessageLookupByLibrary.simpleMessage(
                 "Enter any notes about the playlist"),
@@ -160,6 +184,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "insert": MessageLookupByLibrary.simpleMessage("Insert"),
         "invalid_playlist_URL":
             MessageLookupByLibrary.simpleMessage("Invalid playlist URL"),
+        "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
         "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "no_playlists_found":
             MessageLookupByLibrary.simpleMessage("No playlists found"),
@@ -174,10 +199,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_enter_a_valid_youtube_playlist_URL":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter a valid YouTube playlist URL"),
+        "q1": MessageLookupByLibrary.simpleMessage(
+            "Q: Why does it take a long time to load data in the app?"),
+        "q2": MessageLookupByLibrary.simpleMessage(
+            "Q: How can I add a YouTube playlist?"),
+        "q3": MessageLookupByLibrary.simpleMessage(
+            "Q: What does the app display after adding a playlist?"),
+        "q4": MessageLookupByLibrary.simpleMessage(
+            "Q: What is the roadmap that is created?"),
+        "q5": MessageLookupByLibrary.simpleMessage(
+            "Q: Can I modify the durations of the videos in the roadmap?"),
+        "q6": MessageLookupByLibrary.simpleMessage(
+            "Q: Does the app work with all YouTube playlists?"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "the_Playlist_Roadmap":
             MessageLookupByLibrary.simpleMessage("The Playlist Roadmap"),
+        "theme": MessageLookupByLibrary.simpleMessage("Theme"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "total_Time": MessageLookupByLibrary.simpleMessage("Total Time"),
         "total_Videos": MessageLookupByLibrary.simpleMessage("Total Videos"),

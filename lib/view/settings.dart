@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:yt_to_todo/logic/shared_preferences.dart';
+import 'package:yt_to_todo/view/setting_views/faq.dart';
 import '../generated/l10n.dart';
 import 'setting_views/about_us.dart';
 import 'setting_views/help_and_support.dart';
@@ -38,75 +36,116 @@ class SettingsListState extends StatefulWidget {
 }
 
 class _SettingsListStateState extends State<SettingsListState> {
-  late bool isDarkMode;
-  bool notificationsEnabled = true;
   String selectedLanguage = 'en';
-  int volume = 50;
+  bool isDarkMode = false;
+  
+  final SharePrefrenceClass sharePrefrenceClass = SharePrefrenceClass(); 
 
   @override
+  void initState() {
+    super.initState();
+    _loadSavedPreferences();
+  }
+
+  Future<void> _loadSavedPreferences() async {
+    final savedLanguage = await sharePrefrenceClass.getVlue(key: 'language', defaultValue: 'en');
+    final savedTheme = await sharePrefrenceClass.getVlue(key: 'themeMode', defaultValue: false);
+    
+    setState(() {
+      selectedLanguage = savedLanguage;
+      isDarkMode = savedTheme;
+    });
+  }
+
+  Future<void> _savePreferences(String language, bool theme) async {
+    await sharePrefrenceClass.saveValueString(key: 'language', value: language);
+    await sharePrefrenceClass.saveValuebool(key: 'themeMode', value: theme);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        _buildDarkModeTile(context),
-        const Divider(),
         _buildLanguageTile(context),
+        const Divider(),
+        _buildThemeTile(context), // وضع التبديل للوضع الليلي
         const Divider(),
         _buildPrivacyTile(context),
         const Divider(),
         _buildHelpTile(context),
         const Divider(),
         _buildAboutTile(context),
+        const Divider(),
+        _buildFAQTile(context),
       ],
-    );
-  }
-
-  // Dark Mode Switch Tile
-  ListTile _buildDarkModeTile(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.brightness_6),
-      title: Text("Dark Mode"),
     );
   }
 
   // Language Dropdown Tile
   ListTile _buildLanguageTile(BuildContext context) {
     return ListTile(
-        leading: const Icon(Icons.language),
-        title: Text("Language"), // Use translation
-        trailing: DropdownButton<String>(
-          value: selectedLanguage,
-          onChanged: (String? newValue) {
-            setState(() {
-              selectedLanguage = newValue!;
-            });
-          },
-          items: <String>['English', 'Spanish', 'French', 'German']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
-        ));
+      leading: const Icon(Icons.language),
+      title: Text(S.of(context).Language),
+      trailing: DropdownButton<String>(
+        value: selectedLanguage,
+        onChanged: (String? newValue) {
+          setState(() {
+            selectedLanguage = newValue!;
+            _savePreferences(newValue, isDarkMode); // حفظ اللغة والوضع
+          });
+        },
+        items: ['en', 'ar'].map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(_getLanguageName(value)),
+          );
+        }).toList(),
+      ),
+    );
   }
 
-  // Notifications Switch Tile
+  // Theme Mode Toggle
+  ListTile _buildThemeTile(BuildContext context) {
+    return ListTile(
+      leading: const Icon(Icons.brightness_6),
+      title: Text(S.of(context).darkMode),
+      trailing: Switch(
+        value: isDarkMode,
+        onChanged: (bool value) {
+          setState(() {
+            isDarkMode = value;
+            _savePreferences(selectedLanguage, value); 
+          });
+        },
+      ),
+    );
+  }
+
+  String _getLanguageName(String code) {
+    switch (code) {
+      case 'en':
+        return S.of(context).english;
+      case 'ar':
+        return S.of(context).arabic;
+      default:
+        return 'Unknown';
+    }
+  }
 }
 
-// Privacy and Security Tile
+// بلاطة الخصوصية والأمان
 ListTile _buildPrivacyTile(BuildContext context) {
   return ListTile(
     leading: const Icon(Icons.lock),
-    title: Text("Privacy & Security"),
+    title: Text(S.of(context).PrivacyAndSecurity),
     onTap: () {
       Get.to(const PrivacyAndSecurityPage());
     },
   );
 }
 
-// Help & Support Tile
+// بلاطة المساعدة والدعم
 ListTile _buildHelpTile(BuildContext context) {
   return ListTile(
     leading: const Icon(Icons.help),
@@ -117,13 +156,22 @@ ListTile _buildHelpTile(BuildContext context) {
   );
 }
 
-// About Us Tile
+// بلاطة "من نحن"
 ListTile _buildAboutTile(BuildContext context) {
   return ListTile(
     leading: const Icon(Icons.info),
     title: Text(S.of(context).AboutUs),
     onTap: () {
       Get.to(const AboutUsPage());
+    },
+  );
+}
+ListTile _buildFAQTile(BuildContext context) {
+  return ListTile(
+    leading: const Icon(Icons.book),
+    title: Text(S.of(context).FAQ),
+    onTap: () {
+      Get.to( FAQSection());
     },
   );
 }
@@ -172,3 +220,4 @@ void _sendEmail() async {
     Get.snackbar("Error", "Could not launch");
   }
 }
+

@@ -7,6 +7,7 @@ import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
 import 'package:yt_to_todo/view/screens/intail/intail.dart';
+import 'package:yt_to_todo/view/settings.dart';
 import 'generated/l10n.dart';
 
 void main() async {
@@ -48,7 +49,7 @@ class matrial extends StatelessWidget {
             ],
             supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
-      locale: const Locale('ar'),
+      locale: const Locale('en'),
       title: 'YT to Todo',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Color(0xffe5e5e5)),
@@ -69,9 +70,9 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:
+      home:Setting(isDarkMode: true)
      
-      isIntialized ? const Home() : const PageViewInitial(),
+      // isIntialized ? const Home() : const PageViewInitial(),
     );
   }
 }

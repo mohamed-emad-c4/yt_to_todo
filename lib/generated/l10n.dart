@@ -630,10 +630,10 @@ class S {
     );
   }
 
-  /// `Frequently Asked Questions:`
+  /// `FAQ`
   String get FAQ {
     return Intl.message(
-      'Frequently Asked Questions:',
+      'FAQ',
       name: 'FAQ',
       desc: '',
       args: [],
@@ -1145,6 +1145,226 @@ class S {
     return Intl.message(
       'Close',
       name: 'Close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Mode`
+  String get lightMode {
+    return Intl.message(
+      'Light Mode',
+      name: 'lightMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: Why does it take a long time to load data in the app?`
+  String get q1 {
+    return Intl.message(
+      'Q: Why does it take a long time to load data in the app?',
+      name: 'q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: There can be several factors contributing to data loading delays, including:`
+  String get a_q1 {
+    return Intl.message(
+      'A: There can be several factors contributing to data loading delays, including:',
+      name: 'a_q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: We are continuously working to improve the app's performance to reduce loading times. Thank you for your understanding!`
+  String get a1_q1 {
+    return Intl.message(
+      'A: We are continuously working to improve the app\'s performance to reduce loading times. Thank you for your understanding!',
+      name: 'a1_q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A:Internet Connection: Ensure that your internet connection is stable and fast.`
+  String get a2_q1 {
+    return Intl.message(
+      'A:Internet Connection: Ensure that your internet connection is stable and fast.',
+      name: 'a2_q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A:Data Size: Loading large amounts of data may take longer.`
+  String get a3_q1 {
+    return Intl.message(
+      'A:Data Size: Loading large amounts of data may take longer.',
+      name: 'a3_q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A:Server Performance: Sometimes, there may be delays from the server hosting the data.`
+  String get a4_q1 {
+    return Intl.message(
+      'A:Server Performance: Sometimes, there may be delays from the server hosting the data.',
+      name: 'a4_q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A:App Updates: Updates or maintenance may temporarily slow down the app.`
+  String get a5_q1 {
+    return Intl.message(
+      'A:App Updates: Updates or maintenance may temporarily slow down the app.',
+      name: 'a5_q1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: How can I add a YouTube playlist?`
+  String get q2 {
+    return Intl.message(
+      'Q: How can I add a YouTube playlist?',
+      name: 'q2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: You can add a YouTube playlist by entering the playlist link into the app. The app will analyze the link and retrieve all the videos within it.`
+  String get a1_q2 {
+    return Intl.message(
+      'A: You can add a YouTube playlist by entering the playlist link into the app. The app will analyze the link and retrieve all the videos within it.',
+      name: 'a1_q2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: What does the app display after adding a playlist?`
+  String get q3 {
+    return Intl.message(
+      'Q: What does the app display after adding a playlist?',
+      name: 'q3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: After adding the playlist, the app will display all the videos contained within it, along with the duration of each video and the total duration of all videos.`
+  String get a1_q3 {
+    return Intl.message(
+      'A: After adding the playlist, the app will display all the videos contained within it, along with the duration of each video and the total duration of all videos.',
+      name: 'a1_q3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: What is the roadmap that is created?`
+  String get q4 {
+    return Intl.message(
+      'Q: What is the roadmap that is created?',
+      name: 'q4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: The roadmap is a suggested timeline for watching the videos based on the duration you specify. You can set the amount of time you want to dedicate to watching the videos, and the app will provide a plan for you to follow.`
+  String get a1_q4 {
+    return Intl.message(
+      'A: The roadmap is a suggested timeline for watching the videos based on the duration you specify. You can set the amount of time you want to dedicate to watching the videos, and the app will provide a plan for you to follow.',
+      name: 'a1_q4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: Can I modify the durations of the videos in the roadmap?`
+  String get q5 {
+    return Intl.message(
+      'Q: Can I modify the durations of the videos in the roadmap?',
+      name: 'q5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: Currently, you cannot modify the durations of the videos in the roadmap, but you can choose a different duration when setting up the roadmap for a different plan.`
+  String get a1_q5 {
+    return Intl.message(
+      'A: Currently, you cannot modify the durations of the videos in the roadmap, but you can choose a different duration when setting up the roadmap for a different plan.',
+      name: 'a1_q5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: Does the app work with all YouTube playlists?`
+  String get q6 {
+    return Intl.message(
+      'Q: Does the app work with all YouTube playlists?',
+      name: 'q6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A: Yes, the app works with any public YouTube playlist. Just make sure to enter the correct link for the playlist.`
+  String get a1_q6 {
+    return Intl.message(
+      'A: Yes, the app works with any public YouTube playlist. Just make sure to enter the correct link for the playlist.',
+      name: 'a1_q6',
       desc: '',
       args: [],
     );

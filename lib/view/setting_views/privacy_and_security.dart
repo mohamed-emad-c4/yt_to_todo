@@ -32,8 +32,6 @@ class PrivacyAndSecurityPage extends StatelessWidget {
               BulletPoint(text: S.of(context).RegularAudits),
               BulletPoint(text: S.of(context).UserControl),
               const SizedBox(height: 20),
-              BulletPoint(text: S.of(context).PIN),
-              const SizedBox(height: 20),
               Text(
                 S.of(context).ForAnyQuestions,
                 style: const TextStyle(fontSize: 16),

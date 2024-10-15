@@ -71,7 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterYourPIN":
             MessageLookupByLibrary.simpleMessage("أدخل الرمز السري الخاص بك"),
         "Error": MessageLookupByLibrary.simpleMessage("خطأ"),
-        "FAQ": MessageLookupByLibrary.simpleMessage("الأسئلة المتكررة:"),
+        "FAQ": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة:"),
         "Facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
         "FailedToAddNote":
             MessageLookupByLibrary.simpleMessage("فشل في إضافة الملاحظة"),
@@ -146,6 +146,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
         "YourPrivacyAndSecurity": MessageLookupByLibrary.simpleMessage(
             "خصوصيتك وأمانك مهمان بالنسبة لنا. نتخذ الإجراءات التالية لضمان حماية بياناتك:"),
+        "a1_q1": MessageLookupByLibrary.simpleMessage(
+            "ج: نحن نعمل باستمرار على تحسين أداء التطبيق لتقليل أوقات التحميل. شكرًا لتفهمكم!"),
+        "a1_q2": MessageLookupByLibrary.simpleMessage(
+            "ج: يمكنك إضافة قائمة تشغيل يوتيوب عن طريق إدخال رابط قائمة التشغيل في التطبيق. سيتم تحليل الرابط واسترداد جميع الفيديوهات الموجودة فيه."),
+        "a1_q3": MessageLookupByLibrary.simpleMessage(
+            "ج: بعد إضافة قائمة التشغيل، سيعرض التطبيق جميع الفيديوهات الموجودة فيها، بالإضافة إلى مدة كل فيديو وإجمالي مدة جميع الفيديوهات."),
+        "a1_q4": MessageLookupByLibrary.simpleMessage(
+            "ج: الـ roadmap هو جدول زمني مقترح لمشاهدة الفيديوهات بناءً على المدة التي تحددها. يمكنك تحديد المدة الزمنية التي ترغب في تخصيصها لمشاهدة الفيديوهات، وسيوفر لك التطبيق خطة لمتابعتها."),
+        "a1_q5": MessageLookupByLibrary.simpleMessage(
+            "ج: حاليًا، لا يمكن تعديل مدة الفيديوهات في الـ roadmap، لكن يمكنك اختيار مدة مختلفة عند إعداد الـ roadmap للحصول على تخطيط مختلف."),
+        "a1_q6": MessageLookupByLibrary.simpleMessage(
+            "ج: نعم، يعمل التطبيق مع أي قائمة تشغيل يوتيوب عامة. تأكد من إدخال الرابط الصحيح للقائمة."),
+        "a2_q1": MessageLookupByLibrary.simpleMessage(
+            "ج:اتصال الإنترنت: تأكد من أن اتصالك بالإنترنت مستقر وسريع."),
+        "a3_q1": MessageLookupByLibrary.simpleMessage(
+            "ج:حجم البيانات: تحميل كميات كبيرة من البيانات قد يستغرق وقتًا أطول."),
+        "a4_q1": MessageLookupByLibrary.simpleMessage(
+            "ج:أداء الخادم: أحيانًا قد يكون هناك تأخير من الخادم الذي يستضيف البيانات."),
+        "a5_q1": MessageLookupByLibrary.simpleMessage(
+            "تحديثات التطبيق: قد تؤدي التحديثات أو الصيانة إلى بطء مؤقت في التطبيق."),
+        "a_q1": MessageLookupByLibrary.simpleMessage(
+            "ج: قد تكون هناك عدة عوامل تسهم في تأخير تحميل البيانات، بما في ذلك:"),
         "add_Playlist":
             MessageLookupByLibrary.simpleMessage("إضافة قائمة تشغيل"),
         "all_Playlists":
@@ -153,10 +175,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "all_Videos": MessageLookupByLibrary.simpleMessage("جميع الفيديوهات"),
         "all_days_roadmap":
             MessageLookupByLibrary.simpleMessage("خريطة كل الايام"),
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "could_not_launch":
             MessageLookupByLibrary.simpleMessage("لا يمكن تشغيل"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "duration": MessageLookupByLibrary.simpleMessage("المدة"),
+        "english": MessageLookupByLibrary.simpleMessage("الانجليزية"),
         "enter_any_notes_about_the_playlist":
             MessageLookupByLibrary.simpleMessage(
                 "أدخل أي ملاحظات عن قائمة التشغيل"),
@@ -166,6 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "insert": MessageLookupByLibrary.simpleMessage("إدراج"),
         "invalid_playlist_URL": MessageLookupByLibrary.simpleMessage(
             "عنوان URL لقائمة التشغيل غير صالح"),
+        "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "loading": MessageLookupByLibrary.simpleMessage("تحميل..."),
         "no_playlists_found": MessageLookupByLibrary.simpleMessage(
             "لم يتم العثور على قوائم تشغيل"),
@@ -181,10 +207,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_enter_a_valid_youtube_playlist_URL":
             MessageLookupByLibrary.simpleMessage(
                 "يرجى ادخال عنوان URL لقوائمة التشغيل مصرفي"),
+        "q1": MessageLookupByLibrary.simpleMessage(
+            "س: لماذا يستغرق تحميل البيانات في التطبيق وقتًا طويلاً؟"),
+        "q2": MessageLookupByLibrary.simpleMessage(
+            "س: كيف يمكنني إضافة قائمة تشغيل يوتيوب؟"),
+        "q3": MessageLookupByLibrary.simpleMessage(
+            "س: ماذا يعرض التطبيق بعد إضافة قائمة التشغيل؟"),
+        "q4": MessageLookupByLibrary.simpleMessage(
+            "س: ما هو الـ roadmap الذي يتم إنشاؤه؟"),
+        "q5": MessageLookupByLibrary.simpleMessage(
+            "س: هل يمكنني تعديل مدة الفيديوهات في الـ roadmap؟"),
+        "q6": MessageLookupByLibrary.simpleMessage(
+            "س: هل يعمل التطبيق مع جميع قوائم تشغيل يوتيوب؟"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("حدث خطأ"),
         "the_Playlist_Roadmap":
             MessageLookupByLibrary.simpleMessage("خريطة قائمة التشغيل"),
+        "theme": MessageLookupByLibrary.simpleMessage("الثيم"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
         "total_Time": MessageLookupByLibrary.simpleMessage("إجمالي الوقت"),
         "total_Videos":
