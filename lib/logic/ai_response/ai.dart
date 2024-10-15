@@ -14,6 +14,7 @@ class GiminiAi {
 
   Future<void> aiResponse(String timeOfDay, String playlistId) async {
     try {
+      log("started aiResponse");
       // Fetch playlist information from the database
       playlistInfo = await DatabaseHelper().getPlaylistById(playlistId);
       if (playlistInfo.isEmpty) {
@@ -30,13 +31,13 @@ class GiminiAi {
       }
 
       // Construct the list of videos with their titles and durations
-       String allVideos = "";
-          int videoIndex = 1;
-          for (var video in allInfoPlaylist) {
-            allVideos +=
-                "$videoIndex. ${video['video_tittle']}, ${video["video_duration"]} ${video["video_url"]} \n";
-            videoIndex++;
-          }
+      String allVideos = "";
+      int videoIndex = 1;
+      for (var video in allInfoPlaylist) {
+        allVideos +=
+            "$videoIndex. ${video['video_tittle']}, ${video["video_duration"]} ${video["video_url"]} \n";
+        videoIndex++;
+      }
 
       // Initialize the generative model
       final model = GenerativeModel(
@@ -50,34 +51,75 @@ class GiminiAi {
 
       // Construct the prompt for the generative AI
       String prompt = """
+Your prompt can be improved by enhancing clarity, making the structure more readable, and ensuring that it efficiently guides the model toward the desired outcome. Here’s the refined version of your original prompt:
+
+Role:
 I am a mobile app developer working on a project using the Gemini API. You are an expert with 20 years of experience in creating educational roadmaps for online teaching.
 
-### Task:  
-I want to structure a video learning plan that consists of around $timeOfDay of content per day from the following playlist.
-Your goal is to optimize daily video time to be as close as possible to the *4-hour target*.
-Create a roadmap for consuming the videos, ensuring each day's total viewing time closely matches the $timeOfDay mark.
-After analyzing the playlist, *summarize the video's title and duration* for each day, then provide a *brief task description* to guide the learning process.
+Task:
+I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately $timeOfDay hours of video content per day. You will:
 
-### Playlist Information:  
-The playlist videos are presented in the following format:  
-- *Title*: "تعلم HTML من الصفر: كورس تعلم تطوير وتصميم المواقع وبرمجة صفحات الويب بالعربي"  
-- *Duration*: 5:52 (example)
-- *url*: https://www.youtube.com/watch?v=xxxxxxxxxx
+1. Analyze the playlist's total video duration and divide it evenly across $timeOfDay daily sessions.
+2. Provide a roadmap that ensures each day's total viewing time is as close as possible to $timeOfDay hours.
+3. For each day, summarize the videos' title, duration, and URL, along with a brief description of tasks or learning goals related to the content.
 
-*Total Videos*: $totalVideos
-*Total Duration*: $totalTime
+Playlist Information:
+The playlist includes the following details:
 
+Title: "تعلم HTML من الصفر: كورس تعلم تطوير وتصميم المواقع وبرمجة صفحات الويب بالعربي"
+Duration: 5:52 (example)
+URL: https://www.youtube.com/watch?v=xxxxxxxxxx
+Total Videos: $totalVideos
+Total Duration: $totalTime
 Here is the full playlist:
-
 $allVideos
----
-### Instructions:  
-1. Analyze the video durations and distribute them evenly across the days.  
-2. Each day’s total should be approximately $timeOfDay hours.  
-3. Provide a *summary* of tasks or goals for each day based on the video content.  
-4. Give me the response in JSON format to put it directly into the database.
-5. Specify which day the video belongs to.
-6. send me back the url of the video that i send .
+
+Instructions:
+1. Distribute the videos evenly over the days to closely match the $timeOfDay hours target.
+2. Summarize the key information for each day's videos (title, duration, URL).
+3. Provide a brief learning task or goal description for each day based on the video content.
+4. Return the response in JSON format, formatted to be directly inserted into a database.
+5. Specify which day each video belongs to.
+6. Ensure that each video’s URL is returned in the format: "https://www.youtube.com/watch?v=xxxxxxxxxx".
+
+Example Response (JSON Format):
+
+[
+  {
+    "day": 1,
+    "videos": [
+      {
+        "title": "Introduction to HTML",
+        "duration": "5:52",
+        "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      },
+      {
+        "title": "HTML Tags",
+        "duration": "10:23",
+        "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+    ],
+    "total_duration": "1:00:00",
+    "learning_task": "Understand basic HTML structure and essential tags."
+  },
+  {
+    "day": 2,
+    "videos": [
+      {
+        "title": "CSS Basics",
+        "duration": "15:45",
+        "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+      }
+    ],
+    "total_duration": "1:00:00",
+    "learning_task": "Learn to style HTML using CSS."
+  }
+]
+
+Key Enhancements:
+- Clearer task segmentation, making it easier for the model to follow the instructions.
+- Enhanced structure of the JSON response, ensuring each element is clearly defined.
+- Focused goal on dividing content per day while staying close to the time target, with added learning task suggestions.
 
 """;
 
@@ -98,7 +140,7 @@ $allVideos
       var decodedData = jsonDecode(jsonPart);
 
       // Log the decoded data for debugging
-      log(decodedData[0]["day"].toString());
+      log(decodedData.toString());
       // log(prompt);
     } catch (e) {
       log("Error in aiResponse: $e");

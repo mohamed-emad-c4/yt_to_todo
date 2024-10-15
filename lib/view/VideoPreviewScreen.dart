@@ -48,14 +48,18 @@ class _VideoPreviewScreenState extends State<VideoPreviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_isPlaylistInfoLoaded
-            ? '${widget.allInfoPlaylist.isNotEmpty ? widget.allInfoPlaylist[0]['playlist_real_name'] : 'Playlist'}'
-            : '${S.of(context).loading}',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),), // تحقق مما إذا كانت بيانات القائمة قد تم تحميلها
+        title: Text(
+          _isPlaylistInfoLoaded
+              ? '${widget.allInfoPlaylist.isNotEmpty ? widget.allInfoPlaylist[0]['playlist_real_name'] : 'Playlist'}'
+              : S.of(context).loading,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ), // تحقق مما إذا كانت بيانات القائمة قد تم تحميلها
       ),
-      body: _isLoading || !_isPlaylistInfoLoaded // تحقق من تحميل بيانات الفيديو و القائمة
+      body: _isLoading ||
+              !_isPlaylistInfoLoaded // تحقق من تحميل بيانات الفيديو و القائمة
           ? const Center(child: CircularProgressIndicator())
           : playlistAllVideos.isEmpty
-              ?  Center(child: Text('${S.of(context).no_videos_found}'))
+              ? Center(child: Text(S.of(context).no_videos_found))
               : Column(
                   children: [
                     const SizedBox(height: 16.0),

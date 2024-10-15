@@ -80,20 +80,20 @@ class S {
     );
   }
 
-  /// `Total Time`
+  /// `Time`
   String get total_Time {
     return Intl.message(
-      'Total Time',
+      'Time',
       name: 'total_Time',
       desc: '',
       args: [],
     );
   }
 
-  /// `Total Videos`
+  /// `Videos`
   String get total_Videos {
     return Intl.message(
-      'Total Videos',
+      'Videos',
       name: 'total_Videos',
       desc: '',
       args: [],
