@@ -67,7 +67,7 @@
     "lightMode": "Light Mode",
     "q1": "Q: Why does it take a long time to load data in the app?",
     "a_q1": "A: There can be several factors contributing to data loading delays, including:",
-    "a1_q1": "A: We are continuously working to improve the app's performance to reduce loading times. Thank you for your understanding!",
+    "a1_q1": "A: We are continuously working to improve the apps performance to reduce loading times. Thank you for your understanding!",
     "a2_q1": "A:Internet Connection: Ensure that your internet connection is stable and fast.",
     "a3_q1": "A:Data Size: Loading large amounts of data may take longer.",
     "a4_q1": "A:Server Performance: Sometimes, there may be delays from the server hosting the data.",
@@ -103,5 +103,10 @@
     "third_party": "Third Party Services",
     "our_app": "Our app may contain links to third-party sites or services. We have no control over, and assume no responsibility for, the content or privacy policies of any third-party sites or services.",
     "change_this": "Changes to This Privacy Policy",
-    "we_may_update": "We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes."
+    "we_may_update": "We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes.",
+    "time": "Time",
+    "enter_time_in_minutes":"Please enter the time in minutes",
+    "invalid_playlist_url": "Invalid playlist URL",
+    "please_enter_a_valid_time": "Please enter a valid time",
+    "please_enter_time": "Please enter time"
 }

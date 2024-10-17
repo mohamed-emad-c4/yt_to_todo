@@ -11,7 +11,7 @@ const String giminiAiApiKey = "AIzaSyCLPtP-PRbk5R11EUZbpYdM1USwPRyHj5o";
 class GiminiAi {
   List<Map<String, dynamic>> playlistInfo = [];
   List<Map<String, dynamic>> allInfoPlaylist = [];
-
+  int day = 5;
   Future<void> aiResponse(String timeOfDay, String playlistId) async {
     try {
       log("started aiResponse");
@@ -21,7 +21,13 @@ class GiminiAi {
         log("Playlist not found in the database.");
         return;
       }
-
+      try {
+        int timeofminetstoday = int.parse(timeOfDay);
+        day = timeofminetstoday ~/ 1440;
+      } on FormatException {
+        log("Error: timeOfDay is not a valid integer.");
+        return;
+      }
       // Fetch all videos in the playlist from the database
       allInfoPlaylist =
           await HelperFunction().getALLVideosINPlaylistIfoFromDB(playlistId);
@@ -51,18 +57,33 @@ class GiminiAi {
 
       // Construct the prompt for the generative AI
       String prompt = """
-Your prompt can be improved by enhancing clarity, making the structure more readable, and ensuring that it efficiently guides the model toward the desired outcome. Here’s the refined version of your original prompt:
-
+Your prompt can be improved by enhancing clarity, making the structure more readable,
+ and ensuring that it efficiently guides the model toward the desired outcome. Here’s the refined version of your original prompt:
 Role:
 I am a mobile app developer working on a project using the Gemini API. You are an expert with 20 years of experience in creating educational roadmaps for online teaching.
 
 Task:
 I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately $timeOfDay hours of video content per day. You will:
-
-1. Analyze the playlist's total video duration and divide it evenly across $timeOfDay daily sessions.
-2. Provide a roadmap that ensures each day's total viewing time is as close as possible to $timeOfDay hours.
-3. For each day, summarize the videos' title, duration, and URL, along with a brief description of tasks or learning goals related to the content.
-
+### Input:
+- **Playlist Information**: The playlist will be provided as a structured input, including:
+  - **Title**: "video Title"
+  - **Total Videos**: $totalVideos (e.g., 15)
+  - **Total Duration**: $totalTime (in HH:MM, e.g., 25:52 hours)
+  - **All Videos**: A list of videos with each video's title, duration (in HH:MM), and URL.
+  
+### Instructions:
+1. **Duration Analysis**: 
+   - Analyze the playlist's total duration and divide it into $day days. Each day should aim for close to $timeOfDay hours of video content.
+   - Ensure that daily video durations are as evenly distributed as possible across $day days.
+  
+2. **Daily Breakdown**: 
+   - For each day, provide a breakdown that includes:
+     - **Video Details**: Title, duration, and URL for each video.
+     - **Total Duration**: Sum of video durations for the day.
+     - **Learning Goal**: Summarize the learning objectives or tasks for that day based on the content.
+  
+3. **Output Format**:
+   
 Playlist Information:
 The playlist includes the following details:
 
@@ -99,7 +120,7 @@ Example Response (JSON Format):
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
       }
     ],
-    "total_duration": "1:00:00",
+    "total_duration": "time",
     "learning_task": "Understand basic HTML structure and essential tags."
   },
   {
@@ -111,7 +132,7 @@ Example Response (JSON Format):
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
       }
     ],
-    "total_duration": "1:00:00",
+    "total_duration": "time",
     "learning_task": "Learn to style HTML using CSS."
   }
 ]

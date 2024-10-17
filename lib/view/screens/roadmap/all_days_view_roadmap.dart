@@ -56,7 +56,7 @@ class _AllDaysRoadmapState extends State<AllDaysRoadmap> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:  Text('${S.of(context).all_days_roadmap}'),
+        title:  Text(S.of(context).all_days_roadmap),
       ),
       body: ListView.builder(
         itemCount: daysAndVideos.length,

@@ -75,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourPrivacyAndSecurity": MessageLookupByLibrary.simpleMessage(
             "Your privacy and security are important to us. We take the following measures to ensure that your data is protected:"),
         "a1_q1": MessageLookupByLibrary.simpleMessage(
-            "A: We are continuously working to improve the app\'s performance to reduce loading times. Thank you for your understanding!"),
+            "A: We are continuously working to improve the apps performance to reduce loading times. Thank you for your understanding!"),
         "a1_q2": MessageLookupByLibrary.simpleMessage(
             "A: You can add a YouTube playlist by entering the playlist link into the app. The app will analyze the link and retrieve all the videos within it."),
         "a1_q3": MessageLookupByLibrary.simpleMessage(
@@ -118,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter any notes about the playlist"),
         "enter_the_URL_of_the_playlist": MessageLookupByLibrary.simpleMessage(
             "Enter the URL of the playlist"),
+        "enter_time_in_minutes": MessageLookupByLibrary.simpleMessage(
+            "Please enter the time in minutes"),
         "error": MessageLookupByLibrary.simpleMessage("error"),
         "how_we_use_your_information":
             MessageLookupByLibrary.simpleMessage("How We Use Your Information"),
@@ -125,6 +127,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Information We Collect"),
         "insert": MessageLookupByLibrary.simpleMessage("Insert"),
         "invalid_playlist_URL":
+            MessageLookupByLibrary.simpleMessage("Invalid playlist URL"),
+        "invalid_playlist_url":
             MessageLookupByLibrary.simpleMessage("Invalid playlist URL"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
@@ -147,9 +151,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "playlist_url": MessageLookupByLibrary.simpleMessage("Playlist URL"),
         "please_enter_a_URL":
             MessageLookupByLibrary.simpleMessage("Please enter a URL"),
+        "please_enter_a_valid_time":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid time"),
         "please_enter_a_valid_youtube_playlist_URL":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter a valid YouTube playlist URL"),
+        "please_enter_time":
+            MessageLookupByLibrary.simpleMessage("Please enter time"),
         "q1": MessageLookupByLibrary.simpleMessage(
             "Q: Why does it take a long time to load data in the app?"),
         "q2": MessageLookupByLibrary.simpleMessage(
@@ -170,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "theme": MessageLookupByLibrary.simpleMessage("Theme"),
         "third_party":
             MessageLookupByLibrary.simpleMessage("Third Party Services"),
+        "time": MessageLookupByLibrary.simpleMessage("Time"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "to_allow_you_to_participate": MessageLookupByLibrary.simpleMessage(
             "• To allow you to participate in interactive features when you choose to do so."),
@@ -185,8 +194,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "• To provide and maintain our app."),
         "to_provide_support_for": MessageLookupByLibrary.simpleMessage(
             "• To provide customer support."),
-        "total_Time": MessageLookupByLibrary.simpleMessage("Total Time"),
-        "total_Videos": MessageLookupByLibrary.simpleMessage("Total Videos"),
         "total_Time": MessageLookupByLibrary.simpleMessage("Time"),
         "total_Videos": MessageLookupByLibrary.simpleMessage("Videos"),
         "url": MessageLookupByLibrary.simpleMessage("URL"),

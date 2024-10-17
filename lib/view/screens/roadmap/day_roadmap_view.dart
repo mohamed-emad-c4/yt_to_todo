@@ -18,8 +18,8 @@ class RoadmapView extends StatelessWidget {
           isDone: isDone,
           onTap: () {},
           videoImage: 'assets/images/lan.png',
-          title: '${S.of(context).video}',
-          duration: '${S.of(context).duration}',
+          title: S.of(context).video,
+          duration: S.of(context).duration,
         )));
   }
 }
