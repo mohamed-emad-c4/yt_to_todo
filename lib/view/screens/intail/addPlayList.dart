@@ -28,7 +28,8 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
     }
     return null;
   }
-String time ="60 ";
+
+  String time = "60 ";
   String? _validateTime(String? value) {
     if (value == null || value.isEmpty) {
       return S.of(context).please_enter_time;
@@ -111,8 +112,7 @@ String time ="60 ";
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await GiminiAi()
-              .aiResponse("$time", "PL88kafUXXgBaAgb0h3-ZMvzxb5J2qFrut");
+          await GiminiAi().aiResponse(90, "PL3X--QIIK-OFIRbOHbOXbcfSAvw198lUy");
         },
         child: const Icon(Icons.close),
       ),

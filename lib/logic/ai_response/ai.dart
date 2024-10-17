@@ -11,8 +11,9 @@ const String giminiAiApiKey = "AIzaSyCLPtP-PRbk5R11EUZbpYdM1USwPRyHj5o";
 class GiminiAi {
   List<Map<String, dynamic>> playlistInfo = [];
   List<Map<String, dynamic>> allInfoPlaylist = [];
-  int day = 5;
-  Future<void> aiResponse(String timeOfDay, String playlistId) async {
+ 
+  Future<void> aiResponse(int durationOfDay, String playlistId) async {
+    int numberDays = 0;
     try {
       log("started aiResponse");
       // Fetch playlist information from the database
@@ -21,13 +22,7 @@ class GiminiAi {
         log("Playlist not found in the database.");
         return;
       }
-      try {
-        int timeofminetstoday = int.parse(timeOfDay);
-        day = timeofminetstoday ~/ 1440;
-      } on FormatException {
-        log("Error: timeOfDay is not a valid integer.");
-        return;
-      }
+
       // Fetch all videos in the playlist from the database
       allInfoPlaylist =
           await HelperFunction().getALLVideosINPlaylistIfoFromDB(playlistId);
@@ -54,7 +49,8 @@ class GiminiAi {
       // Extract total time and total videos from the playlist info
       String totalTime = playlistInfo[0]['playlist_total_time'];
       String totalVideos = playlistInfo[0]["playlist_total_videos"];
-
+      numberDays = HelperFunction().timeToMinutes(totalTime) ~/ durationOfDay;
+log("numberDays :: $numberDays :: $durationOfDay ::  HelperFunction().timeToMinutes(totalTime) :: ${HelperFunction().timeToMinutes(totalTime)}");
       // Construct the prompt for the generative AI
       String prompt = """
 Your prompt can be improved by enhancing clarity, making the structure more readable,
@@ -63,18 +59,21 @@ Role:
 I am a mobile app developer working on a project using the Gemini API. You are an expert with 20 years of experience in creating educational roadmaps for online teaching.
 
 Task:
-I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately $timeOfDay hours of video content per day. You will:
+every day approximately ($durationOfDay) minutes of video content.
+I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately ($durationOfDay) minutes of video content per day. You will:
 ### Input:
 - **Playlist Information**: The playlist will be provided as a structured input, including:
   - **Title**: "video Title"
   - **Total Videos**: $totalVideos (e.g., 15)
   - **Total Duration**: $totalTime (in HH:MM, e.g., 25:52 hours)
   - **All Videos**: A list of videos with each video's title, duration (in HH:MM), and URL.
-  
+  - **Learning Goal**: A summary of the learning goals and tasks for each day.
+  -** if video is log than ($durationOfDay) minutes pat it in next day.**
+  - **if video duration is not specified, assume it is 1 hour.**
 ### Instructions:
 1. **Duration Analysis**: 
-   - Analyze the playlist's total duration and divide it into $day days. Each day should aim for close to $timeOfDay hours of video content.
-   - Ensure that daily video durations are as evenly distributed as possible across $day days.
+   - Analyze the playlist's total duration and divide it into $int days. Each day should aim for close to ($durationOfDay) minutes of video content.
+   - Ensure that daily video durations are as evenly distributed as possible across $numberDays days.
   
 2. **Daily Breakdown**: 
    - For each day, provide a breakdown that includes:
@@ -96,13 +95,13 @@ Here is the full playlist:
 $allVideos
 
 Instructions:
-1. Distribute the videos evenly over the days to closely match the $timeOfDay hours target.
+1. Distribute the videos evenly over the days to closely match the ($durationOfDay) minutes target.
 2. Summarize the key information for each day's videos (title, duration, URL).
 3. Provide a brief learning task or goal description for each day based on the video content.
 4. Return the response in JSON format, formatted to be directly inserted into a database.
 5. Specify which day each video belongs to.
 6. Ensure that each video’s URL is returned in the format: "https://www.youtube.com/watch?v=xxxxxxxxxx".
-
+7.Summarize the key information for each  videos
 Example Response (JSON Format):
 
 [
@@ -111,13 +110,15 @@ Example Response (JSON Format):
     "videos": [
       {
         "title": "Introduction to HTML",
-        "duration": "5:52",
+        "duration": "time",
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+        "learning_video_task": "Learn the basics of HTML and its syntax."
       },
       {
         "title": "HTML Tags",
-        "duration": "10:23",
+        "duration": "1time",
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+        "learning_task": "Understand the basic structure of HTML and its various tags."
       }
     ],
     "total_duration": "time",
@@ -128,8 +129,9 @@ Example Response (JSON Format):
     "videos": [
       {
         "title": "CSS Basics",
-        "duration": "15:45",
+        "duration": "time",
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+        "learning_video_task": "Learn the basics of CSS and its syntax."
       }
     ],
     "total_duration": "time",
@@ -143,7 +145,7 @@ Key Enhancements:
 - Focused goal on dividing content per day while staying close to the time target, with added learning task suggestions.
 
 """;
-
+      log("$totalVideos \n $totalTime   \n $numberDays \n $durationOfDay ");
       // Generate content using the generative model
       final content = [Content.text(prompt)];
       final response = await model.generateContent(content);

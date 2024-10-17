@@ -208,4 +208,21 @@ class HelperFunction {
     // log("allInfoPlaylist :: ${allInfoPlaylist.length.toString()}");
     return allInfoPlaylist;
   }
+int timeToMinutes(String time) {
+  // Split the time string into hours, minutes, and seconds
+  List<String> parts = time.split(':');
+  
+  // Parse hours, minutes, and seconds
+  int hours = int.parse(parts[0]);
+  int minutes = int.parse(parts[1]);
+  int seconds = int.parse(parts[2]);
+  
+  // Convert hours to minutes
+  int totalMinutes = hours * 60 + minutes;
+  
+  // Convert seconds to minutes and add them
+  totalMinutes += seconds ~/ 60;
+  
+  return totalMinutes;
+}
 }
