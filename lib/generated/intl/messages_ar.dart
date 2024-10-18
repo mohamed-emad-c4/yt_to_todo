@@ -187,8 +187,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("• لتقديم وصيانة تطبيقنا."),
         "to_provide_support_for":
             MessageLookupByLibrary.simpleMessage("• لتقديم الدعم الفني."),
-        "total_Time": MessageLookupByLibrary.simpleMessage(" الوقت"),
-        "total_Videos": MessageLookupByLibrary.simpleMessage(" الفيديوهات"),
         "total_Time": MessageLookupByLibrary.simpleMessage("الوقت"),
         "total_Videos": MessageLookupByLibrary.simpleMessage("الفيديوهات"),
         "url": MessageLookupByLibrary.simpleMessage("عنوان URL"),

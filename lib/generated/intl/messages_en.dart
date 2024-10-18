@@ -185,8 +185,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "• To provide and maintain our app."),
         "to_provide_support_for": MessageLookupByLibrary.simpleMessage(
             "• To provide customer support."),
-        "total_Time": MessageLookupByLibrary.simpleMessage("Total Time"),
-        "total_Videos": MessageLookupByLibrary.simpleMessage("Total Videos"),
         "total_Time": MessageLookupByLibrary.simpleMessage("Time"),
         "total_Videos": MessageLookupByLibrary.simpleMessage("Videos"),
         "url": MessageLookupByLibrary.simpleMessage("URL"),

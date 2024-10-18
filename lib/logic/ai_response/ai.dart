@@ -57,7 +57,7 @@ Role:
 I am a mobile app developer working on a project using the Gemini API. You are an expert with 20 years of experience in creating educational roadmaps for online teaching.
 
 Task:
-I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately $timeOfDay hours of video content per day. You will:
+I need you to  Create a **7-day roadmap* for consuming the videos, ensuring each day's total viewing time closely matches $timeOfDay hours of video content per day. You will:
 
 1. Analyze the playlist's total video duration and divide it evenly across $timeOfDay daily sessions.
 2. Provide a roadmap that ensures each day's total viewing time is as close as possible to $timeOfDay hours.
