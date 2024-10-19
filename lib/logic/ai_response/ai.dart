@@ -62,26 +62,26 @@ Task:
 every day approximately ($durationOfDay) minutes of video content.
 I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately ($durationOfDay) minutes of video content per day. You will:
 ### Input:
-- **Playlist Information**: The playlist will be provided as a structured input, including:
-  - **Title**: "video Title"
-  - **Total Videos**: $totalVideos (e.g., 15)
-  - **Total Duration**: $totalTime (in HH:MM, e.g., 25:52 hours)
-  - **All Videos**: A list of videos with each video's title, duration (in HH:MM), and URL.
-  - **Learning Goal**: A summary of the learning goals and tasks for each day.
+- *Playlist Information*: The playlist will be provided as a structured input, including:
+  - *Title*: "video Title"
+  - *Total Videos*: $totalVideos (e.g., 15)
+  - *Total Duration*: $totalTime (in HH:MM, e.g., 25:52 hours)
+  - *All Videos*: A list of videos with each video's title, duration (in HH:MM), and URL.
+  - *Learning Goal*: A summary of the learning goals and tasks for each day.
   -** if video is log than ($durationOfDay) minutes pat it in next day.**
-  - **if video duration is not specified, assume it is 1 hour.**
+  - *if video duration is not specified, assume it is 1 hour.*
 ### Instructions:
-1. **Duration Analysis**: 
-   - Analyze the playlist's total duration and divide it into $int days. Each day should aim for close to ($durationOfDay) minutes of video content.
+1. *Duration Analysis*: 
+   - Analyze the playlist's total duration and divide it into $numberDays days. Each day should aim for close to ($durationOfDay) minutes of video content.
    - Ensure that daily video durations are as evenly distributed as possible across $numberDays days.
   
-2. **Daily Breakdown**: 
+2. *Daily Breakdown*: 
    - For each day, provide a breakdown that includes:
-     - **Video Details**: Title, duration, and URL for each video.
-     - **Total Duration**: Sum of video durations for the day.
-     - **Learning Goal**: Summarize the learning objectives or tasks for that day based on the content.
+     - *Video Details*: Title, duration, and URL for each video.
+     - *Total Duration*: Sum of video durations for the day.
+     - *Learning Goal*: Summarize the learning objectives or tasks for that day based on the content.
   
-3. **Output Format**:
+3. *Output Format*:
    
 Playlist Information:
 The playlist includes the following details:
@@ -171,7 +171,7 @@ Key Enhancements:
   }
 
   String extractJsonPart(String text) {
-    final jsonPattern1 = RegExp(r'```json([\s\S]*?)```');
+    final jsonPattern1 = RegExp(r'json([\s\S]*?)');
     final jsonPattern2 = RegExp(r'\{[\s\S]*\}');
 
     // Try to match the first pattern

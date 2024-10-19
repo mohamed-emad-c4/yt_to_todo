@@ -8,7 +8,6 @@ import 'package:yt_to_todo/view/screens/roadmap/all_days_view_roadmap.dart';
 
 import '../../../data/databases.dart';
 import '../../VideoPreviewScreen.dart';
-import '../../settings.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

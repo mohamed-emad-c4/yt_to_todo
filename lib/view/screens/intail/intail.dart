@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:yt_to_todo/logic/shared_preferences.dart';
-import 'package:yt_to_todo/view/screens/intail/home.dart';
 
 // globalVaribul.dart
 int currentPageIndex = 0;
 
-List<Widget> widgetIntial = [
-  const WelcomeScreen(),
-  const FeaturesScreen(),
-  const InitialSettingsScreen(),
-];
+List<Widget> widgetIntial = []; // We will initialize this after defining the PageViewInitial
+
 // PageView widget to display initial screens
 class PageViewInitial extends StatefulWidget {
   const PageViewInitial({super.key});
@@ -17,73 +12,27 @@ class PageViewInitial extends StatefulWidget {
   @override
   _PageViewInitialState createState() => _PageViewInitialState();
 }
-class InitialSettingsScreen extends StatelessWidget {
-  const InitialSettingsScreen({super.key});
+
+class _PageViewInitialState extends State<PageViewInitial> {
+  final PageController _pageController = PageController(); // Single PageController for all pages
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "إعدادات أولية",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              Image.asset("assets/images/lan.png"),
-              const SizedBox(height: 20),
-              const Text("قبل أن تبدأ، دعنا نعرف بعض الإعدادات."),
-              const SizedBox(height: 40),
-              // Dropdown for language selection
-              DropdownButton<String>(
-                items: <String>['العربية', 'الإنجليزية'].map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (_) {},
-                hint: const Text("اختر اللغة"),
-              ),
-              const SizedBox(height: 40),
-              // Button to finish onboarding
-              ElevatedButton(
-                onPressed: () {
-                  // Navigate to the main screen
-                  SharePrefrenceClass()
-                      .saveValuebool(value: true, key: "isInitialized");
+  void initState() {
+    super.initState();
 
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PlaylistScreen()));
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                child: const Text("إنهاء"),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+    // Initialize widgetIntial with the required PageController passed to the screens
+    widgetIntial = [
+      WelcomeScreen(pageController: _pageController),
+      FeaturesScreen(pageController: _pageController),
+      const InitialSettingsScreen(),
+    ];
   }
-}
-class _PageViewInitialState extends State<PageViewInitial> {
-  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        controller: _pageController,
+        controller: _pageController, // Attach the PageController here
         itemBuilder: (context, index) => widgetIntial[index],
         itemCount: widgetIntial.length,
         onPageChanged: (index) {
@@ -92,11 +41,28 @@ class _PageViewInitialState extends State<PageViewInitial> {
           });
         },
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentPageIndex,
+        onTap: (index) {
+          _pageController.animateToPage(
+            index,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'مرحبا'),
+          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'الميزات'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'الإعدادات'),
+        ],
+      ),
     );
   }
 }
+
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  final PageController pageController; // Required pageController parameter
+  const WelcomeScreen({super.key, required this.pageController});
 
   @override
   Widget build(BuildContext context) {
@@ -121,8 +87,6 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to the next screen within the PageView
-                  final pageController = PageController();
                   pageController.animateToPage(
                     1,
                     duration: const Duration(milliseconds: 300),
@@ -136,8 +100,8 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  "",
-                  style: TextStyle(fontSize: 25),
+                  "التالي",
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
             ],
@@ -147,8 +111,10 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+
 class FeaturesScreen extends StatelessWidget {
-  const FeaturesScreen({super.key});
+  final PageController pageController; // Required pageController parameter
+  const FeaturesScreen({super.key, required this.pageController});
 
   @override
   Widget build(BuildContext context) {
@@ -176,8 +142,6 @@ class FeaturesScreen extends StatelessWidget {
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to the next screen within the PageView
-                  final pageController = PageController();
                   pageController.animateToPage(
                     2,
                     duration: const Duration(milliseconds: 300),
@@ -190,7 +154,61 @@ class FeaturesScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                child: const Text(""),
+                child: const Text(
+                  "التالي",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class InitialSettingsScreen extends StatelessWidget {
+  const InitialSettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "إعدادات أولية",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              Image.asset("assets/images/lan.png"),
+              const SizedBox(height: 20),
+              const Text("قبل أن تبدأ، دعنا نعرف بعض الإعدادات."),
+              const SizedBox(height: 40),
+              DropdownButton<String>(
+                items: <String>['العربية', 'الإنجليزية'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (_) {},
+                hint: const Text("اختر اللغة"),
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the main screen or save settings
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: const Text("إنهاء"),
               ),
             ],
           ),

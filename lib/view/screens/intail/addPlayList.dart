@@ -112,7 +112,7 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await GiminiAi().aiResponse(90, "PL3X--QIIK-OFIRbOHbOXbcfSAvw198lUy");
+          await GiminiAi().aiResponse(90, "PL4n1Qos4Tb6SWPbJNpiznp-Ok4A8J_23l");
         },
         child: const Icon(Icons.close),
       ),

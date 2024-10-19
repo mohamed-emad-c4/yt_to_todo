@@ -7,93 +7,179 @@ import '../../../data/databases.dart';
 
 final List<Map<String, dynamic>> daysAndVideos = [
   {
-    "day": "Day 1", // Ensure this is a String
+    "day": 1,
     "videos": [
       {
-        "title": "Important Before You Start With C++ Course",
-        "duration": "00:03:36",
-        "url": "https://www.youtube.com/watch?v=DzwcA_sRIss",
-        "learning_video_task": "Understand the importance of preparation and what to expect from the C++ course."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 1. Hello Visual Studio",
+        "duration": "00:13:04",
+        "url": "https://www.youtube.com/watch?v=Y8c1IHZs5qc",
+        "learning_video_task":
+            "Introduction to Visual Basic.NET and Visual Studio IDE."
       },
       {
-        "title": "Important: What to Expect from this C++ Course?",
-        "duration": "00:11:26",
-        "url": "https://www.youtube.com/watch?v=KtCBGz9xcgI",
-        "learning_video_task": "Gain insight into the course structure, content, and learning objectives."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 2. Customise The Visual Studio IDE",
+        "duration": "00:05:30",
+        "url": "https://www.youtube.com/watch?v=HbU3msDuif8",
+        "learning_video_task":
+            "Customizing the Visual Studio IDE for better workflow."
       },
       {
-        "title": "Lesson #01 - Why to Start with C++?",
-        "duration": "00:02:12",
-        "url": "https://www.youtube.com/watch?v=4VepZmDa8Ic",
-        "learning_video_task": "Explore the reasons why C++ is a valuable language to learn."
+        "title":
+            "Visual Basic.NET Programming. Beginners Lesson 3. Output and Variables",
+        "duration": "00:15:14",
+        "url": "https://www.youtube.com/watch?v=N7nw2jjnCnQ",
+        "learning_video_task":
+            "Understanding basic output and variable concepts in Visual Basic.NET."
       },
       {
-        "title": "Lesson #02 - What is C++?",
-        "duration": "00:09:36",
-        "url": "https://www.youtube.com/watch?v=wr8A8i8vlBQ",
-        "learning_video_task": "Gain a foundational understanding of the C++ programming language."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 4. Variable Data Types",
+        "duration": "00:07:31",
+        "url": "https://www.youtube.com/watch?v=XM3mXeTrSeE",
+        "learning_video_task":
+            "Exploring different data types for variables in Visual Basic.NET."
       },
       {
-        "title": "Lesson #03 - What can you do with C++?",
-        "duration": "00:13:37",
-        "url": "https://www.youtube.com/watch?v=ZczjYLPTrpc",
-        "learning_video_task": "Discover the wide range of applications and possibilities with C++."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 5. Input with Windows Forms",
+        "duration": "00:12:23",
+        "url": "https://www.youtube.com/watch?v=6ZRM6T24uR0",
+        "learning_video_task":
+            "Taking input from users through Windows Forms in Visual Basic.NET."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 6. Debugging Code",
+        "duration": "00:08:29",
+        "url": "https://www.youtube.com/watch?v=EceKLMxzE_8",
+        "learning_video_task":
+            "Learning how to debug code effectively in Visual Basic.NET."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 7. Arithmetic Operators",
+        "duration": "00:11:37",
+        "url": "https://www.youtube.com/watch?v=wUeraOAfw9A",
+        "learning_video_task":
+            "Understanding arithmetic operators and their usage in Visual Basic.NET."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 8. Complex Arithmetic Expressions",
+        "duration": "00:08:26",
+        "url": "https://www.youtube.com/watch?v=PB_3vwgGXGo",
+        "learning_video_task":
+            "Working with complex arithmetic expressions in Visual Basic.NET."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 9. Selection with If Statements",
+        "duration": "00:10:09",
+        "url": "https://www.youtube.com/watch?v=4R1vniYOP44",
+        "learning_video_task":
+            "Introduction to conditional statements (If) in Visual Basic.NET."
       }
     ],
-    "total_duration": "00:39:57",
-    "learning_task": "Get familiar with the C++ course and its key aspects."
+    "total_duration": "01:17:41",
+    "learning_task":
+        "Fundamentals of Visual Basic.NET - setting up environment, basic syntax, variables, data types, input/output, and debugging. "
   },
   {
-    "day": "Day 2", // Ensure this is a String
+    "day": 2,
     "videos": [
       {
-        "title": "Lesson #5 - Why to start with C++ not Java?",
-        "duration": "00:03:20",
-        "url": "https://www.youtube.com/watch?v=7T4WXJa2bxM",
-        "learning_video_task": "Compare C++ and Java, understand why C++ is preferred in certain situations."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 10. Logical and Relational Operators 1",
+        "duration": "00:14:34",
+        "url": "https://www.youtube.com/watch?v=BRjDnqLXZPY",
+        "learning_video_task": "Logical and Relational Operators Part 1."
       },
       {
-        "title": "Lesson #4 - Why to start with C++ not C?",
-        "duration": "00:04:02",
-        "url": "https://www.youtube.com/watch?v=eP5F7dzZ2lg",
-        "learning_video_task": "Compare C++ and C, understand why C++ is a more advanced choice."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 11. Logical and Relational Operators 2",
+        "duration": "00:09:06",
+        "url": "https://www.youtube.com/watch?v=dV-dOuGNDlE",
+        "learning_video_task": "Logical and Relational Operators Part 2."
       },
       {
-        "title": "Lesson #06 - Why to Start with C++ Not Python?",
-        "duration": "00:03:37",
-        "url": "https://www.youtube.com/watch?v=811NJSnQvng",
-        "learning_video_task": "Compare C++ and Python, understand why C++ is more suitable for certain tasks."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 12. Select Case",
+        "duration": "00:06:20",
+        "url": "https://www.youtube.com/watch?v=1EdExr_oojM",
+        "learning_video_task":
+            "Understanding and using the Select Case statement."
       },
       {
-        "title": "Lesson #07 - Is C++ Outdated and not Used?!",
-        "duration": "00:01:59",
-        "url": "https://www.youtube.com/watch?v=811NJSnQvng",
-        "learning_video_task": "Address the misconception of C++ being outdated and explore its continued relevance."
+        "title": "Visual Basic.NET Programming. Beginner Lesson 13. For Next",
+        "duration": "00:05:20",
+        "url": "https://www.youtube.com/watch?v=7X_w_XHGe10",
+        "learning_video_task":
+            "Introduction to loop structures - For Next loop."
       },
       {
-        "title": "Lesson #08 - Will I Find Work In C++?",
-        "duration": "00:02:05",
-        "url": "https://www.youtube.com/watch?v=NQyAzxp6bzs",
-        "learning_video_task": "Gain reassurance about job opportunities in the C++ field."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 14. Practice For Next Loops & If Blocks",
+        "duration": "00:04:23",
+        "url": "https://www.youtube.com/watch?v=9It2PcyA6kM",
+        "learning_video_task": "Practicing For Next loops and If statements."
       },
       {
-        "title": "Lesson #09 - C++ Will Give you the Future Keys in Programming!",
-        "duration": "00:00:57",
-        "url": "https://www.youtube.com/watch?v=on7z9pg5MvM",
-        "learning_video_task": "Understand why C++ provides a strong foundation for future programming endeavors."
+        "title": "Visual Basic.NET Programming. Beginner Lesson 15. Do While",
+        "duration": "00:08:46",
+        "url": "https://www.youtube.com/watch?v=8kKed0YsKm4",
+        "learning_video_task": "Understanding and using Do While loop."
       },
       {
-        "title": "Lesson # 10 - Get Started - Install Visual Studio 2022 IDE With C++",
-        "duration": "00:08:48",
-        "url": "https://www.youtube.com/watch?v=oG62eWTIAdc",
-        "learning_video_task": "Learn how to set up the Visual Studio 2022 IDE for C++ development."
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 16. Condition Controlled Loops",
+        "duration": "00:08:16",
+        "url": "https://www.youtube.com/watch?v=ofyFQtMU5Hk",
+        "learning_video_task": "Conditional control of loops."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 17. Array Variables",
+        "duration": "00:10:09",
+        "url": "https://www.youtube.com/watch?v=V4-So9cvq_k",
+        "learning_video_task": "Introduction to Arrays in Visual Basic.NET."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 18. Practice Arrays & Loops",
+        "duration": "00:09:59",
+        "url": "https://www.youtube.com/watch?v=ihTp5ZC8W-o",
+        "learning_video_task": "Practice using arrays and loops together."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 19. Linear Search",
+        "duration": "00:06:38",
+        "url": "https://www.youtube.com/watch?v=HHHgnoQoThc",
+        "learning_video_task": "Implementing a linear search algorithm."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 20. Two Dimensional Arrays",
+        "duration": "00:10:37",
+        "url": "https://www.youtube.com/watch?v=5uO2-KdZ3-I",
+        "learning_video_task":
+            "Understanding and using 2D arrays in Visual Basic.NET."
+      },
+      {
+        "title":
+            "Visual Basic.NET Programming. Beginner Lesson 21. 2D Arrays & Nested Loops",
+        "duration": "00:10:19",
+        "url": "https://www.youtube.com/watch?v=Kkm4CEFbF08",
+        "learning_video_task": "Combining 2D arrays with nested loops."
       }
     ],
-    "total_duration": "00:34:44",
-    "learning_task": "Master the syntax and output capabilities of C++."
-  },
+    "total_duration": "01:41:41",
+    "learning_task":
+        "Control flow structures (loops and conditional statements), array manipulation, and algorithm implementation (linear search)."
+  }
 ];
-
 
 class AllDaysRoadmap extends StatefulWidget {
   const AllDaysRoadmap({super.key});
@@ -131,7 +217,7 @@ class _AllDaysRoadmapState extends State<AllDaysRoadmap> {
           log("Building DaySection for index: $index");
           final dayData = daysAndVideos[index];
           return DaySection(
-            day: dayData['day'] as String,
+            day: "${dayData['day']}",
             videos: List<Map<String, dynamic>>.from(
                 dayData['videos'] as List<Map<String, dynamic>>),
             totalDuration: dayData['total_duration'] as String,
@@ -396,7 +482,7 @@ class VideoCard extends StatelessWidget {
                   ],
                 ),
               ),
-              
+
               // Action buttons
               Column(
                 children: [
