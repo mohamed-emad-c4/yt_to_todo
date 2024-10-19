@@ -730,10 +730,10 @@ class S {
     );
   }
 
-  /// `A: We are continuously working to improve the app's performance to reduce loading times. Thank you for your understanding!`
+  /// `A: We are continuously working to improve the apps performance to reduce loading times. Thank you for your understanding!`
   String get a1_q1 {
     return Intl.message(
-      'A: We are continuously working to improve the app\'s performance to reduce loading times. Thank you for your understanding!',
+      'A: We are continuously working to improve the apps performance to reduce loading times. Thank you for your understanding!',
       name: 'a1_q1',
       desc: '',
       args: [],
@@ -1095,6 +1095,56 @@ class S {
     return Intl.message(
       'We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes.',
       name: 'we_may_update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message(
+      'Time',
+      name: 'time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the time in minutes`
+  String get enter_time_in_minutes {
+    return Intl.message(
+      'Please enter the time in minutes',
+      name: 'enter_time_in_minutes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid playlist URL`
+  String get invalid_playlist_url {
+    return Intl.message(
+      'Invalid playlist URL',
+      name: 'invalid_playlist_url',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid time`
+  String get please_enter_a_valid_time {
+    return Intl.message(
+      'Please enter a valid time',
+      name: 'please_enter_a_valid_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter time`
+  String get please_enter_time {
+    return Intl.message(
+      'Please enter time',
+      name: 'please_enter_time',
       desc: '',
       args: [],
     );

@@ -12,7 +12,7 @@ class AboutUsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About Us"),
+        title: const Text("About Us"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

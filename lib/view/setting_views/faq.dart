@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:yt_to_todo/generated/l10n.dart';
 
 class FAQSection extends StatelessWidget {
+  const FAQSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class FAQSection extends StatelessWidget {
         children: [
           ExpansionTile(
             title:
-                Text('${S.of(context).q1}'),
+                Text(S.of(context).q1),
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -34,7 +36,7 @@ class FAQSection extends StatelessWidget {
           ),
           ExpansionTile(
             title:
-                Text('${S.of(context).q2}'),
+                Text(S.of(context).q2),
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -49,7 +51,7 @@ class FAQSection extends StatelessWidget {
           ),
           ExpansionTile(
             title:
-                Text('${S.of(context).q3}'),
+                Text(S.of(context).q3),
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -64,7 +66,7 @@ class FAQSection extends StatelessWidget {
           ),
           ExpansionTile(
             title:
-                Text('${S.of(context).q4}'),
+                Text(S.of(context).q4),
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -79,7 +81,7 @@ class FAQSection extends StatelessWidget {
           ),
           ExpansionTile(
             title:
-                Text('${S.of(context).q5}'),
+                Text(S.of(context).q5),
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -94,7 +96,7 @@ class FAQSection extends StatelessWidget {
           ),
           ExpansionTile(
             title:
-                Text('${S.of(context).q6}'),
+                Text(S.of(context).q6),
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),

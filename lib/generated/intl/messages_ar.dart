@@ -119,6 +119,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "أدخل أي ملاحظات عن قائمة التشغيل"),
         "enter_the_URL_of_the_playlist": MessageLookupByLibrary.simpleMessage(
             "أدخل عنوان URL لقائمة التشغيل"),
+        "enter_time_in_minutes": MessageLookupByLibrary.simpleMessage(
+            "الرجاء ادخال الوقت بالدقائق"),
         "error": MessageLookupByLibrary.simpleMessage("خطأ"),
         "how_we_use_your_information":
             MessageLookupByLibrary.simpleMessage("كيف نستخدم معلوماتك"),
@@ -127,6 +129,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "insert": MessageLookupByLibrary.simpleMessage("إدراج"),
         "invalid_playlist_URL": MessageLookupByLibrary.simpleMessage(
             "عنوان URL لقائمة التشغيل غير صالح"),
+        "invalid_playlist_url":
+            MessageLookupByLibrary.simpleMessage("الرابط المحدد غير صالح"),
         "language": MessageLookupByLibrary.simpleMessage("لغة"),
         "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "loading": MessageLookupByLibrary.simpleMessage("تحميل..."),
@@ -149,9 +153,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("عنوان URL لقائمة التشغيل"),
         "please_enter_a_URL":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال عنوان URL"),
+        "please_enter_a_valid_time":
+            MessageLookupByLibrary.simpleMessage("الرجاء ادخال وقت صالح"),
         "please_enter_a_valid_youtube_playlist_URL":
             MessageLookupByLibrary.simpleMessage(
                 "يرجى ادخال عنوان URL لقوائمة التشغيل مصرفي"),
+        "please_enter_time":
+            MessageLookupByLibrary.simpleMessage("الرجاء ادخال الوقت"),
         "q1": MessageLookupByLibrary.simpleMessage(
             "س: لماذا يستغرق تحميل البيانات في التطبيق وقتًا طويلاً؟"),
         "q2": MessageLookupByLibrary.simpleMessage(
@@ -172,6 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "theme": MessageLookupByLibrary.simpleMessage("الثيم"),
         "third_party":
             MessageLookupByLibrary.simpleMessage("خدمات الطرف الثالث"),
+        "time": MessageLookupByLibrary.simpleMessage("الوقت"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
         "to_allow_you_to_participate": MessageLookupByLibrary.simpleMessage(
             "• للسماح لك بالمشاركة في الميزات التفاعلية عندما تختار ذلك."),

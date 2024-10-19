@@ -1,8 +1,6 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:yt_to_todo/generated/l10n.dart';
-import 'package:yt_to_todo/logic/helper.dart';
 import '../data/databases.dart';
 
 class VideoPreviewScreen extends StatefulWidget {

@@ -8,6 +8,7 @@ import 'package:yt_to_todo/view/screens/roadmap/all_days_view_roadmap.dart';
 
 import '../../../data/databases.dart';
 import '../../VideoPreviewScreen.dart';
+import '../../settings.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -54,9 +55,13 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.nightlight_round),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               // Toggle dark mode
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AllDaysRoadmap()));
             },
           ),
         ],

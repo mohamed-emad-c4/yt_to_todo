@@ -11,8 +11,9 @@ const String giminiAiApiKey = "AIzaSyCLPtP-PRbk5R11EUZbpYdM1USwPRyHj5o";
 class GiminiAi {
   List<Map<String, dynamic>> playlistInfo = [];
   List<Map<String, dynamic>> allInfoPlaylist = [];
-
-  Future<void> aiResponse(String timeOfDay, String playlistId) async {
+ 
+  Future<void> aiResponse(int durationOfDay, String playlistId) async {
+    int numberDays = 0;
     try {
       log("started aiResponse");
       // Fetch playlist information from the database
@@ -48,16 +49,17 @@ class GiminiAi {
       // Extract total time and total videos from the playlist info
       String totalTime = playlistInfo[0]['playlist_total_time'];
       String totalVideos = playlistInfo[0]["playlist_total_videos"];
-
+      numberDays = HelperFunction().timeToMinutes(totalTime) ~/ durationOfDay;
+log("numberDays :: $numberDays :: $durationOfDay ::  HelperFunction().timeToMinutes(totalTime) :: ${HelperFunction().timeToMinutes(totalTime)}");
       // Construct the prompt for the generative AI
       String prompt = """
-Your prompt can be improved by enhancing clarity, making the structure more readable, and ensuring that it efficiently guides the model toward the desired outcome. Here’s the refined version of your original prompt:
-
+Your prompt can be improved by enhancing clarity, making the structure more readable,
+ and ensuring that it efficiently guides the model toward the desired outcome. Here’s the refined version of your original prompt:
 Role:
 I am a mobile app developer working on a project using the Gemini API. You are an expert with 20 years of experience in creating educational roadmaps for online teaching.
 
 Task:
-I need you to  Create a **7-day roadmap* for consuming the videos, ensuring each day's total viewing time closely matches $timeOfDay hours of video content per day. You will:
+I need you to create a structured video learning plan from a YouTube playlist. The goal is to distribute approximately $timeOfDay hours of video content per day. You will:
 
 1. Analyze the playlist's total video duration and divide it evenly across $timeOfDay daily sessions.
 2. Provide a roadmap that ensures each day's total viewing time is as close as possible to $timeOfDay hours.
@@ -75,13 +77,13 @@ Here is the full playlist:
 $allVideos
 
 Instructions:
-1. Distribute the videos evenly over the days to closely match the $timeOfDay hours target.
+1. Distribute the videos evenly over the days to closely match the ($durationOfDay) minutes target.
 2. Summarize the key information for each day's videos (title, duration, URL).
 3. Provide a brief learning task or goal description for each day based on the video content.
 4. Return the response in JSON format, formatted to be directly inserted into a database.
 5. Specify which day each video belongs to.
 6. Ensure that each video’s URL is returned in the format: "https://www.youtube.com/watch?v=xxxxxxxxxx".
-
+7.Summarize the key information for each  videos
 Example Response (JSON Format):
 
 [
@@ -90,16 +92,18 @@ Example Response (JSON Format):
     "videos": [
       {
         "title": "Introduction to HTML",
-        "duration": "5:52",
+        "duration": "time",
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+        "learning_video_task": "Learn the basics of HTML and its syntax."
       },
       {
         "title": "HTML Tags",
-        "duration": "10:23",
+        "duration": "1time",
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+        "learning_task": "Understand the basic structure of HTML and its various tags."
       }
     ],
-    "total_duration": "1:00:00",
+    "total_duration": "time",
     "learning_task": "Understand basic HTML structure and essential tags."
   },
   {
@@ -107,11 +111,12 @@ Example Response (JSON Format):
     "videos": [
       {
         "title": "CSS Basics",
-        "duration": "15:45",
+        "duration": "time",
         "url": "https://www.youtube.com/watch?v=xxxxxxxxxx"
+        "learning_video_task": "Learn the basics of CSS and its syntax."
       }
     ],
-    "total_duration": "1:00:00",
+    "total_duration": "time",
     "learning_task": "Learn to style HTML using CSS."
   }
 ]
@@ -122,7 +127,7 @@ Key Enhancements:
 - Focused goal on dividing content per day while staying close to the time target, with added learning task suggestions.
 
 """;
-
+      log("$totalVideos \n $totalTime   \n $numberDays \n $durationOfDay ");
       // Generate content using the generative model
       final content = [Content.text(prompt)];
       final response = await model.generateContent(content);

@@ -15,6 +15,7 @@ class PlaylistInputScreen extends StatefulWidget {
 class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
   final TextEditingController _urlController = TextEditingController();
   final TextEditingController _notesController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
@@ -24,6 +25,18 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
     }
     if (!value.contains('youtube.com/playlist?list=')) {
       return S.of(context).please_enter_a_valid_youtube_playlist_URL;
+    }
+    return null;
+  }
+
+  String time = "60 ";
+  String? _validateTime(String? value) {
+    if (value == null || value.isEmpty) {
+      return S.of(context).please_enter_time;
+    }
+    int? time = int.tryParse(value);
+    if (time == null || time <= 0) {
+      return S.of(context).please_enter_a_valid_time;
     }
     return null;
   }
@@ -38,11 +51,12 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
     try {
       String url = _urlController.text.trim();
       String notes = _notesController.text.trim();
+      time = _timeController.text.trim();
 
       String playlistId = _extractPlaylistId(url);
 
       if (playlistId.isEmpty) {
-        _showSnackbar("S.of(context).invalid_playlist_url");
+        _showSnackbar(S.of(context).invalid_playlist_url);
         return;
       }
 
@@ -86,6 +100,8 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
             children: <Widget>[
               _buildUrlInputField(),
               const SizedBox(height: 20),
+              _buildTimeInputField(),
+              const SizedBox(height: 20),
               _buildNotesInputField(),
               const SizedBox(height: 20),
               _buildSubmitButton(),
@@ -96,8 +112,7 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await GiminiAi()
-              .aiResponse("1 hour", "PL88kafUXXgBaAgb0h3-ZMvzxb5J2qFrut");
+          await GiminiAi().aiResponse(90, "PL3X--QIIK-OFIRbOHbOXbcfSAvw198lUy");
         },
         child: const Icon(Icons.close),
       ),
@@ -117,6 +132,23 @@ class _PlaylistInputScreenState extends State<PlaylistInputScreen> {
         fillColor: Colors.grey[200],
       ),
       validator: _validateUrl,
+    );
+  }
+
+  Widget _buildTimeInputField() {
+    return TextFormField(
+      controller: _timeController,
+      decoration: InputDecoration(
+        labelText: S.of(context).time,
+        hintText: S.of(context).enter_time_in_minutes,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        filled: true,
+        fillColor: Colors.grey[200],
+      ),
+      keyboardType: TextInputType.number,
+      validator: _validateTime,
     );
   }
 

@@ -11,7 +11,7 @@ class UpdateHomeCubit extends Cubit<UpdateHomeState> {
       emit(UpdateHomeLoading());
       
       // Fetch the updated playlists from your database
-      await Future.delayed(Duration(seconds: 1)); // Simulate a network/db call
+      await Future.delayed(const Duration(seconds: 1)); // Simulate a network/db call
       
       // After fetching data, emit UpdateHomeLoaded
       emit(UpdateHomeLoaded());
