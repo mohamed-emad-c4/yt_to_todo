@@ -7,7 +7,6 @@ import 'package:yt_to_todo/logic/globalVaribul.dart';
 import 'package:yt_to_todo/logic/shared_preferences.dart';
 import 'package:yt_to_todo/view/screens/intail/home.dart';
 import 'package:yt_to_todo/view/screens/intail/intail.dart';
-import 'package:yt_to_todo/view/settings.dart';
 import 'generated/l10n.dart';
 
 void main() async {
@@ -71,8 +70,9 @@ class matrial extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Setting(isDarkMode: true)
-      // isIntialized ? const Home() : const PageViewInitial(),
+      home: isIntialized ? const Home() : const PageViewInitial(),
+
+      // Setting(isDarkMode: true)
     );
   }
 }
